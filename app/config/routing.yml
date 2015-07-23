@@ -1,0 +1,8 @@
+proposal_web:
+    resource: "@ProposalWebBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
