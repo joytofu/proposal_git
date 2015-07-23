@@ -5,14 +5,23 @@
 {% endblock %}
 
 {% block private_css %}
-    {% stylesheets %}
+    {% stylesheets '@ProposalWebBundle/Resources/public/css/proposal2/bootstrap.min.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"
+    {% endstylesheets %}
 {% endblock %}
-<script src="js/jquery.min.js"></script>
-<script src="js/collapse.js"></script>
-<script src="js/transition.js"></script>
-</head>
 
-<body>
+{% block private_js %}
+    {% javascripts
+    '@ProposalWebBundle/Resources/public/js/proposal2/jquery.min.js'
+    '@ProposalWebBundle/Resources/public/js/proposal2/collapse.js'
+    '@ProposalWebBundle/Resources/public/js/proposal2/transition.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+
+{% block main_content %}
 <div class="bg-1">
 <div class="container">
   <div class="page-header">
@@ -220,40 +229,7 @@
         <form method="post">
         <textarea name="cities" rows="5" cols="70"></textarea><br>
         <button class="button red q-z" style="margin-left:-0.4px" type="submit" name="sb">完成</button>
-        <!-- 提交脚本文件 -->
-        <?php
-        //声明变量保存文件名，该文件保存最后一问题信息
-        $filename="cities_data.txt";
-		$url="storybook/story.php";
-        
-        //判断屎猪是否按下完成按钮，按下则条件成功
-        if(isset($_POST['sb'])){
-			if(!empty($_POST['cities'])){
-           $message=$_POST['cities'];
-          file_put_contents($filename, $message); 
-             echo "<script language = 'javascript'  type ='text/javascript' > ";  
-             echo " window.location.href = '$url' ";  
-             echo " </script>" ;
-			 require("sendemail.php");
-			 echo "<script>alert('请认真阅读故事，并回答下方问题')</script>";
-          }else{
-             echo "<script>alert('请输入城市')</script>";
-          return;
-          }
-		}
-		
-	
-        
-        //定义向文件写入数据的函数
-         function writeMessage($filename,$message){
-        $fp=fopen($filename, "a");
-        if(flock($fp,LOCK_EX)){
-          fwrite($fp,$message);
-            flock($fp,LOCK_UN);
-         }
-         fclose($fp);
-         } 
-         ?> 
+
         </form></div>
         </div>
       </div>
@@ -261,5 +237,4 @@
   </div>
 </div>
 </div>
-</body>
-</html>
+{% endblock %}
