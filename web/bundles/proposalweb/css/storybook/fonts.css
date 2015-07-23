@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face{
+	font-family:"qp"; /*俏皮体 */
+	src:url("../fonts/qp.ttf");
+}
+
+@font-face{
+	font-family:"yy"; /*云游体*/
+	src:url("../fonts/yy.ttf");
+}
+@font-face{
+	font-family:"xwz"; /* 小丸子 */
+	src:url("../fonts/xwz.ttf");
+}
+@font-face{
+	font-family:"ts"; /* 小天使 */
+	src:url("../fonts/ts.ttf");
+}
