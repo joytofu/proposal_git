@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    {% block title %}
+    <title></title>
+    {% endblock %}
+
+    <!--global_css-->
+    {% block global_css %}
+    {% stylesheets
+    'bundles/proposalweb/css/proposal.css'
+    'bundles/proposalweb/css/base.css'
+    'bundles/proposalweb/css/button.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+    {% endblock %}
+
+    <!--private css-->
+    {% block private_css %}
+    {% endblock %}
+
+    <!--private js-->
+    {% block private_js %}
+    {% endblock %}
+</head>
