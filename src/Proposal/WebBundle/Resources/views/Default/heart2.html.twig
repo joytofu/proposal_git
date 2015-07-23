@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>proposal</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<link href="css/button.css" type="text/css" rel="stylesheet">
+<link href="css/base.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**2012-04**/</span><br />
+			
+			<span class="keyword">我来到了我们最初相遇的地方</span><br />
+			<span class="keyword">我不认识你</span><br />
+			<span class="keyword">你不认识我</span><br />
+			<span class="comments">/**2012-05**/</span><br />
+			我发现了你<br />
+			那一刻，我仿佛发现了世界上所有的美好<br />
+			<span class="comments">/**2012-06**/</span><br />
+			<span class="keyword">我想尽一切办法去认识你</span><br />
+			<span class="keyword">我知道</span><br />
+			<span class="keyword">你将会是我生命中非常重要的人</span><br />
+			<span class="comments">/**2012-07-07**/</span><br />
+			那一天<br />
+			我知道我是幸运的<br />
+			你成为了我的女朋友！<br />
+			<span class="comments">从那一天起</span><br />
+			<span class="keyword">我的生命有了变化</span><br />
+			<span class="keyword">变得更加多姿多彩</span><br />
+			<span class="comments">/**<?php echo date('Y-m-d')?>**/</span><br />
+			<span class="keyword">我们一起走过了1000多个日夜</span><br />
+			<span class="keyword">一起经历过1000多个日出与日落</span><br />
+			<span class="comments">我们一起哭过、笑过、闹过、彷徨过、坚持过</span><br />
+			<span class="comments">经过1000多个日夜的洗礼</span><br />
+			<span class="keyword">我更加坚信、更加坚定</span><br />
+			<span class="keyword">你不再仅仅是我的女朋友</span><br />
+			你将成为我为之<span class="keyword">深爱一生、奋斗一生、相伴一生的</span><span class="comments">妻子！</span><br />
+			<span class="keyword">I, will take you, to be my wedded </span><span class="comments">wife</span>!<br />
+			<span class="keyword">Trust you, honer you, cherish and love you forever and ever in my life!</span><br />
+			Through sickness and health<br />
+			For richer or for poorer<br />
+			Never love nobody else!<br />
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					亲爱的屎猪，这是我们相爱在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					Love U Forever And Ever!!<br/>
+					<div class="signature">- 永远爱你的周健猪</div>
+					<div style="margin-top:53%;margin-right:13%">
+                        <a href="../engagement/engagement/index.html"><button class="button red">
+	                        <div class="shine"></div>
+                            <font style="font-size:18px;font-weight:600;color:white">我也爱你</font>
+                            </button></a>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2012, 7, 7);
+together.setHours(0);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 500);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+
+</body>
+</html>

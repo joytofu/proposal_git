@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>我爱屎猪</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/font.css" type="text/css" />
+    <link rel="stylesheet" href="css/base.css" type="text/css" />
+    <link rel="stylesheet" href="css/button.css" type="text/css" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/manhuaDate.1.0.css" />
+    <!--<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-2.1.1.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <!--modal effect-->
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+</head>
+
+<body>
+  <div style="text-align:center;clear:both;">
+</div>
+  <div class="wrapper">
+    <div class="border-circle" id="one"></div>
+    <div class="border-circle" id="two"></div>
+    <div class="background-circle">
+      <div class="triangle-light"></div>
+      <div class="body"></div>
+      <span class="shirt-text">I</span>
+      <span class="shirt-text">♥</span>
+      <span class="shirt-text">屎</span>
+      <span class="shirt-text">猪</span>
+      <div class="triangle-dark"></div>
+    </div>
+    <div class="head">
+      <div class="ear" id="left"></div>
+      <div class="ear" id="right"></div>
+      <div class="hair-main">
+        <div class="sideburn" id="left"></div>
+        <div class="sideburn" id="right"></div>
+        <div class="hair-top"></div>
+      </div>
+      <div class="face">
+        <div class="hair-bottom"></div>
+        <div class="nose"></div>
+        <div class="eye-shadow" id="left">
+          <div class="eyebrow"></div>
+          <div class="eye"></div>
+        </div>
+        <div class="eye-shadow" id="right">
+          <div class="eyebrow"></div>
+          <div class="eye"></div>
+        </div>
+        <div class="mouth"></div>
+        <div class="shadow-wrapper">
+          <div class="shadow"></div>
+        </div>
+      </div>
+    </div>
+    <span class="music-note" id="one">&#9835;</span>
+    <span class="music-note" id="two">&#9834;</span>
+  </div>
+    
+    <div class="engagement">Would You Marry Me?</div>
+      
+     <button name="yes" data-modal="modal-13"  class="button lightpurple md-trigger"><div class="shine" style="top:-18px !important"></div>Yes, I do</button>
+     <button name="cntwait" data-modal="modal-4"  class="button lightorange md-trigger"><div class="shine" style="top:-18px !important"></div>Can't wait</button>
+
+  <!-- hidden contets -->
+      <!--YES,I DO按钮-->
+      <div class="md-modal md-effect-13" id="modal-13">
+			<div class="md-content">
+				<h3>恭喜您</h3>
+				<div>
+                    <p>即将获得大奖：<strong style="font-size:23px;color:yellow">欧洲十国免费之旅</strong></p>
+					<ul>
+						<li>在领奖之前，我们先来玩一个解谜游戏！</li>
+						<li>能否成功完成，就看你能不能充分发挥你的聪明才智咯！</li>
+						<li>游戏一共设置了数关，通关后有相应的奖品以及下一关的线索！</li>
+                        <li>你准备好了吗？</li>
+					</ul>
+					<button class="md-close md-trigger" data-modal="modal-g1">立刻开始</button>
+				</div>
+			</div>
+		</div>
+
+      <!--CAN'T WAIT按钮-->
+      <div class="md-modal md-effect-4" id="modal-4">
+			<div class="md-content">
+				<h3>哎呀，别着急嘛</h3>
+				<div>
+					<p><strong style="font-size:23px;color:yellow">你离大奖仅一步之遥了</strong></p>
+					<ul>
+						<li>在领奖之前，你需要先通过一个小小的考验</li>
+						<li>能否成功完成并领取大奖，就看你够不够聪明咯！</li>
+						<li>游戏一共设置了数关，通关后有相应的奖品以及下一关的线索！</li>
+                        <li>你准备好了吗？</li>
+					</ul>
+					<button class="md-close md-trigger" data-modal="modal-g1">现在开始</button>
+				</div>
+			</div>
+		</div>
+
+  <!--解谜游戏部分-->
+  <!--第一关.Part I-->
+  <div class="md-modal md-effect-5" id="modal-g1">
+      <div class="md-content">
+          <h3>第一关</h3><span>Part I</span>
+          <div>
+              <p><strong style="font-size:20px;color:yellow">在你的枕头下，藏有一个信封，找到信封并打开后按“下一步”查看更多线索提示！</strong></p>
+              <button class="md-close md-trigger" data-modal="modal-g2">下一步</button>
+          </div>
+      </div>
+  </div>
+
+  <!--第一关.Part II-->
+  <div class="md-modal md-effect-2" id="modal-g2">
+      <div class="md-content">
+          <h3>第一关</h3><span>Part II</span>
+          <div>
+              <ul style="font-size:20px;color:#210841;font-weight: bold">
+              <li>是不是发现信封里面只有一张白纸？</li>
+              <li>别着急，下面的步骤是关键↓</li>
+              <li>在你的蓝色笔筒中，藏有一支紫外线射灯，用灯对着白纸照照看！</li>
+                  </ul>
+              <button class="md-close md-trigger" data-modal="modal-g3">下一步</button>
+          </div>
+
+
+
+      </div>
+  </div>
+
+  <!--第一关.Part III-->
+  <div class="md-modal md-effect-2" id="modal-g3">
+      <div class="md-content">
+          <h3>第一关</h3><span>Part III</span>
+          <div>
+              <strong style="font-size:20px;color:#191970">请输入密码:  </strong><input type="text" id="pwd1" name="pwd1">
+             <div style="margin-top:20px">
+              <button id="p2" type="button">提交</button>
+              <button class="md-close md-trigger" data-modal="modal-g4"  id="p3">下一关</button>
+             </div>
+          </div>
+      </div>
+  </div>
+
+  <!--第二关-->
+  <div class="md-modal md-effect-8" id="modal-g4">
+      <div class="md-content">
+          <h3>第二关</h3>
+          <div>
+              <ul>
+              <li>这一关的线索，就在你的房间。</li>
+              <li>提示:你和你的男神翻云覆雨的下面。嘻嘻，think about it!</li>
+              <li>根据找到的线索，破解出密码，填到下面↓</li>
+              <li><strong style="font-size:18px;color:#9acd32">请输入密码:  </strong><input type="text" id="pwd2" name="pwd2"></li>
+              </ul>
+                  <button id="p4" type="button">提交</button>
+                  <button class="md-close md-trigger" data-modal="modal-g5"  id="p5">下一关</button>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!--第三关-->
+  <div class="md-modal md-effect-11" id="modal-g5">
+      <div class="md-content">
+          <h3>第三关</h3>
+          <div>
+              <ul>
+                  <li>恭喜你来到了第三关！</li>
+                  <li>这一关,你需要写出男神送你的音乐盒所播音乐的名字</li>
+                  <li>填到这里↓</li>
+                  <li><strong style="font-size:18px;color:#9acd32">请输入密码:  </strong><input type="text" id="pwd3" name="pwd3"></li>
+              </ul>
+              <button id="p6" type="button">提交</button>
+              <button  class="md-close md-trigger" data-modal="modal-g6"  id="p7">下一关</button>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!--第四关-->
+  <div class="md-modal md-effect-11" id="modal-g6">
+      <div class="md-content">
+          <h3>第四关</h3>
+          <div>
+              <ul>
+                  <li>恭喜你来到了第四关！你离大奖越来越近了！</li>
+                  <li>去杂物房寻找你需要的线索吧！</li>
+                  <li>根据线索，破解出密码，并填到下面↓</li>
+                  <li><strong style="font-size:18px;color:#9acd32">请输入密码:  </strong><input type="text" id="pwd4" name="pwd4"></li>
+              </ul>
+              <button id="p8" type="button">提交</button>
+              <button  class="md-close md-trigger" data-modal="modal-g7"  id="p9">下一关</button>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!--第五关-->
+  <div class="md-modal md-effect-11" id="modal-g7">
+      <div class="md-content">
+          <h3>第五关</h3>
+          <div>
+              <ul>
+                  <li>恭喜你来到了最后一关！</li>
+                  <li>这一关的问题非常简单</li>
+                  <li>就是:你和男神的相爱纪念日</li>
+                  <li><input type="text" style="width:170px;height:30px" class="mh_date" id="born_date" readonly="true"></li>
+              </ul>
+              <button id="p10" type="button">提交</button>
+              <button  class="md-close md-trigger" data-modal="modal-g8"  id="p11">下一关</button>
+
+          </div>
+      </div>
+  </div>
+
+
+  <!--Final-->
+  <div class="md-modal md-effect-4" id="modal-g8">
+      <div class="md-content">
+          <h3>Victory</h3>
+          <div>
+              <ul style="font-size:20px;font-weight: bold;">
+                  <li>恭喜你通过了所有关卡</li>
+                  <li>现在请移步到车库领取你的终极大奖！</li>
+              </ul>
+              <button  class="md-close" id="p12">好紧张，现在立刻去！么么哒！<(￣3￣)> </button>
+
+          </div>
+      </div>
+  </div>
+
+ 
+
+  <script type="text/javascript">
+      //隐藏下一步按钮
+      $("#p3").hide();
+      $("#p5").hide();
+      $("#p7").hide();
+      $("#p9").hide();
+      $("#p11").hide();
+
+      //正确密码
+      var correct1 = "HG32Q6KTM43SZAW";
+      var correct2 = "Storm Glass";
+      var correct3 = "天空之城";
+      var correct4_1 = "没用的盒子";   var correct4_2 = "无用的盒子";
+      var born_date = "2012-7-7";
+
+      //第一关密码
+      $(function () {
+          $("#p2").bind("click", function () {
+              $.ajax({
+                      type: "POST",
+                      url: "check_pwd.php",
+                      data: $("#pwd1").val(),
+                      async:false,
+                      success: function(data){
+                         if($("#pwd1").val()==correct1){
+                             alert("恭喜你，密码正确！");
+                             $("#p3").show();
+                             $("#p2").hide();
+                         }else{
+                             alert("艾玛，错了错了！挣大猪眼看清楚！");
+                         }
+
+              }
+          });
+
+      })
+      });
+
+      //第二关密码
+      $(function () {
+          $("#p4").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#pwd2").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#pwd2").val()==correct2){
+                          alert("恭喜屎猪，密码正确！");
+                          $("#p5").show();
+                          $("#p4").hide();
+                      }else{
+                          alert("NO NO NO！Try again!");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+      //第三关密码
+      $(function () {
+          $("#p6").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#pwd3").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#pwd3").val()==correct3){
+                          alert("Bingo，你真聪明！");
+                          $("#p7").show();
+                          $("#p6").hide();
+                      }else{
+                          alert("不对！快问男票！");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+      //第四关密码
+      $(function () {
+          $("#p8").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#pwd4").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#pwd4").val()==correct4_1||$("#pwd4").val()==correct4_2){
+                          alert("哇靠，你居然懂英文！");
+                          $("#p9").show();
+                          $("#p8").hide();
+                      }else{
+                          alert("唉，你的英文真菜！快去问男神！");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+      //第五关密码
+      $(function () {
+          $("#p10").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#born_date").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#born_date").val()==born_date){
+                          alert("正确！总算你没有忘记！");
+                          $("#p11").show();
+                          $("#p10").hide();
+                      }else{
+                          alert("岂有此理，居然连纪念日忘记！哼！╭∩╮(︶︿︶）╭∩╮");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+
+  </script>
+
+
+
+    <div class="md-overlay"></div><!-- the overlay element -->
+
+		<script src="js2/classie.js"></script>
+		<script src="js2/modalEffects.js"></script>
+
+		<!-- for the blur effect -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js2/';
+		</script>
+		<script src="js2/cssParser.js"></script>
+		<script src="js2/css-filters-polyfill.js"></script>
+        <script src="js/jquery-ui-datepicker.js"></script>
+
+
+
+
+  <script src="js2/modernizr.custom.js"></script>
+  <!--日历选择器-->
+  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="js/manhuaDate.1.0.js"></script>
+  <script type="text/javascript">
+      $(function (){
+
+          $("input.mh_date").manhuaDate({
+              Event : "click",//可选
+              Left : 0,//弹出时间停靠的左边位置
+              Top : -16,//弹出时间停靠的顶部边位置
+              fuhao : "-",//日期连接符默认为-
+              isTime : false,//是否开启时间值默认为false
+              beginY : 1949,//年份的开始默认为1949
+              endY :2100//年份的结束默认为2049
+          });
+
+      });
+  </script>
+
+
+</body>
+</html>
+
+
