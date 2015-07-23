@@ -9,9 +9,9 @@
     <!--global_css-->
     {% block global_css %}
     {% stylesheets
-    'bundles/proposalweb/css/proposal.css'
-    'bundles/proposalweb/css/base.css'
-    'bundles/proposalweb/css/button.css'
+    '@ProposalWebBundle/Resources/public/css/proposal.css'
+    '@ProposalWebBundle/Resources/public/css/base.css'
+    '@ProposalWebBundle/Resources/public/css/button.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets %}
@@ -24,4 +24,11 @@
     <!--private js-->
     {% block private_js %}
     {% endblock %}
+
 </head>
+
+<body>
+{% block main_content %}
+{% endblock %}
+</body>
+</html>
