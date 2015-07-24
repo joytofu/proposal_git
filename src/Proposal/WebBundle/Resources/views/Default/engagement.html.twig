@@ -4,25 +4,17 @@
   <title>engagement</title>
 {% endblock %}
 
-{% block private_css %}
-    {% stylesheets '@ProposalWebBundle/Resources/public/css/engagement/*'%}
-    <link rel="stylesheet" href="{{ seet_url }}" type="text/css" />
-    {% endstylesheets %}
+{% block global_css %}
 {% endblock %}
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="fonts/font.css" type="text/css" />
-    <link rel="stylesheet" href="css/base.css" type="text/css" />
-    <link rel="stylesheet" href="css/button.css" type="text/css" />
-    <link rel="stylesheet" href="css/jquery-ui.css" />
-    <link rel="stylesheet" type="text/css" href="css/manhuaDate.1.0.css" />
-    <!--<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-2.1.1.min.js"></script>-->
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <!--modal effect-->
-    <link rel="stylesheet" type="text/css" href="css/default.css" />
-	<link rel="stylesheet" type="text/css" href="css/component.css" />
 
+{% block private_css %}
+<script type="text/javascript" src="{{asset('bundles/proposalweb/js/engagement/jquery-2.1.4.min.js')}}"></script>
+{% stylesheets '@ProposalWebBundle/Resources/public/css/engagement/*'%}
+    <link rel="stylesheet" href="{{asset_url}}" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
 
-{% main_content %}
+{% block main_content %}
   <div style="text-align:center;clear:both;">
 </div>
   <div class="wrapper">
@@ -130,9 +122,6 @@
                   </ul>
               <button class="md-close md-trigger" data-modal="modal-g3">下一步</button>
           </div>
-
-
-
       </div>
   </div>
 
@@ -163,7 +152,6 @@
               </ul>
                   <button id="p4" type="button">提交</button>
                   <button class="md-close md-trigger" data-modal="modal-g5"  id="p5">下一关</button>
-
           </div>
       </div>
   </div>
@@ -182,7 +170,6 @@
               </ul>
               <button id="p6" type="button">提交</button>
               <button  class="md-close md-trigger" data-modal="modal-g6"  id="p7">下一关</button>
-
           </div>
       </div>
   </div>
@@ -201,7 +188,6 @@
               </ul>
               <button id="p8" type="button">提交</button>
               <button  class="md-close md-trigger" data-modal="modal-g7"  id="p9">下一关</button>
-
           </div>
       </div>
   </div>
@@ -379,25 +365,25 @@
 
     <div class="md-overlay"></div><!-- the overlay element -->
 
-		<script src="js2/classie.js"></script>
-		<script src="js2/modalEffects.js"></script>
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/classie.js')}}"></script>
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/modalEffects.js')}}"></script>
 
 		<!-- for the blur effect -->
 		<script>
 			// this is important for IEs
 			var polyfilter_scriptpath = '/js2/';
 		</script>
-		<script src="js2/cssParser.js"></script>
-		<script src="js2/css-filters-polyfill.js"></script>
-        <script src="js/jquery-ui-datepicker.js"></script>
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/cssParser.js')}}"></script>
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/css-filters-polyfill.js')}}"></script>
 
 
 
 
-  <script src="js2/modernizr.custom.js"></script>
+
+  <script src="{{asset('bundles/proposalweb/js/engagement/js2/modernizr.custom.js')}}"></script>
   <!--日历选择器-->
-  <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-  <script type="text/javascript" src="js/manhuaDate.1.0.js"></script>
+  <script type="text/javascript" src="{{asset('bundles/proposalweb/js/engagement/js/jquery-1.7.2.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('bundles/proposalweb/js/engagement/js/manhuaDate.1.0.js')}}"></script>
   <script type="text/javascript">
       $(function (){
           $("input.mh_date").manhuaDate({

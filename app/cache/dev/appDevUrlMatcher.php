@@ -138,107 +138,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
-        }
-
-        if (0 === strpos($pathinfo, '/js')) {
-            if (0 === strpos($pathinfo, '/js/f026373')) {
-                // _assetic_f026373
-                if ($pathinfo === '/js/f026373.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f026373',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_f026373',);
+            if (0 === strpos($pathinfo, '/css/29d4912')) {
+                // _assetic_29d4912
+                if ($pathinfo === '/css/29d4912.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '29d4912',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_29d4912',);
                 }
 
-                // _assetic_f026373_0
-                if ($pathinfo === '/js/f026373_jquery-2.1.4.min_1.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'f026373',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_f026373_0',);
+                // _assetic_29d4912_0
+                if ($pathinfo === '/css/29d4912_part_1_default_heart_1.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '29d4912',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_29d4912_0',);
                 }
 
-            }
-
-            if (0 === strpos($pathinfo, '/js/e0f2cde')) {
-                // _assetic_e0f2cde
-                if ($pathinfo === '/js/e0f2cde.js') {
-                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => NULL,  '_format' => 'js',  '_route' => '_assetic_e0f2cde',);
-                }
-
-                if (0 === strpos($pathinfo, '/js/e0f2cde_part_')) {
-                    if (0 === strpos($pathinfo, '/js/e0f2cde_part_1_')) {
-                        if (0 === strpos($pathinfo, '/js/e0f2cde_part_1_c')) {
-                            // _assetic_e0f2cde_0
-                            if ($pathinfo === '/js/e0f2cde_part_1_classie_1.js') {
-                                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 0,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_0',);
-                            }
-
-                            if (0 === strpos($pathinfo, '/js/e0f2cde_part_1_css')) {
-                                // _assetic_e0f2cde_1
-                                if ($pathinfo === '/js/e0f2cde_part_1_css-filters-polyfill_2.js') {
-                                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 1,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_1',);
-                                }
-
-                                // _assetic_e0f2cde_2
-                                if ($pathinfo === '/js/e0f2cde_part_1_cssParser_3.js') {
-                                    return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 2,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_2',);
-                                }
-
-                            }
-
-                        }
-
-                        if (0 === strpos($pathinfo, '/js/e0f2cde_part_1_mod')) {
-                            // _assetic_e0f2cde_3
-                            if ($pathinfo === '/js/e0f2cde_part_1_modalEffects_4.js') {
-                                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 3,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_3',);
-                            }
-
-                            // _assetic_e0f2cde_4
-                            if ($pathinfo === '/js/e0f2cde_part_1_modernizr.custom_5.js') {
-                                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 4,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_4',);
-                            }
-
-                        }
-
-                    }
-
-                    if (0 === strpos($pathinfo, '/js/e0f2cde_part_2_')) {
-                        // _assetic_e0f2cde_5
-                        if ($pathinfo === '/js/e0f2cde_part_2_classie_1.js') {
-                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 5,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_5',);
-                        }
-
-                        // _assetic_e0f2cde_6
-                        if ($pathinfo === '/js/e0f2cde_part_2_jquery-1.7.2.min_2.js') {
-                            return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 6,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_6',);
-                        }
-
-                        if (0 === strpos($pathinfo, '/js/e0f2cde_part_2_m')) {
-                            // _assetic_e0f2cde_7
-                            if ($pathinfo === '/js/e0f2cde_part_2_manhuaDate.1.0_3.js') {
-                                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 7,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_7',);
-                            }
-
-                            // _assetic_e0f2cde_8
-                            if ($pathinfo === '/js/e0f2cde_part_2_modernizr.custom_4.js') {
-                                return array (  '_controller' => 'assetic.controller:render',  'name' => 'e0f2cde',  'pos' => 8,  '_format' => 'js',  '_route' => '_assetic_e0f2cde_8',);
-                            }
-
-                        }
-
-                    }
-
-                }
-
-            }
-
-        }
-
-        if (0 === strpos($pathinfo, '/css/29d4912')) {
-            // _assetic_29d4912
-            if ($pathinfo === '/css/29d4912.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '29d4912',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_29d4912',);
-            }
-
-            // _assetic_29d4912_0
-            if ($pathinfo === '/css/29d4912_part_1_default_heart_1.css') {
-                return array (  '_controller' => 'assetic.controller:render',  'name' => '29d4912',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_29d4912_0',);
             }
 
         }
