@@ -51,7 +51,7 @@
       <file leaf-file-name="engagement.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/engagement.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3773585" vertical-offset="2452" max-vertical-offset="4191">
+            <state vertical-scroll-proportion="2.4787736" vertical-offset="670" max-vertical-offset="4191">
               <caret line="368" column="49" selection-start-line="368" selection-start-column="49" selection-end-line="368" selection-end-column="49" />
               <folding>
                 <element signature="n#div#1;n#!!top" expanded="false" />
@@ -545,7 +545,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -919,7 +919,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/engagement.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3773585" vertical-offset="2452" max-vertical-offset="4191">
+        <state vertical-scroll-proportion="2.4787736" vertical-offset="670" max-vertical-offset="4191">
           <caret line="368" column="49" selection-start-line="368" selection-start-column="49" selection-end-line="368" selection-end-column="49" />
           <folding>
             <element signature="n#div#1;n#!!top" expanded="false" />

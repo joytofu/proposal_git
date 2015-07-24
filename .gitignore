@@ -1,4 +1,4 @@
-/.idea/*
+
 /app/bootstrap.php.cache
 /app/cache/*
 !app/cache/.gitkeep
@@ -12,6 +12,3 @@
 /web/bundles/
 *.log
 app/logs/dev.log
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/workspace.xml
