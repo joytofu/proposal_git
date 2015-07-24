@@ -48,6 +48,12 @@ class DefaultController extends Controller
 
         if($form->isSubmitted() && $form->isValid()){
 
+            //下面是写入数据库操作
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+
+            
             return $this->redirectToRoute('confirm');
         }
 
