@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints\EqualTo;
 
+
 /**
  * Route("/")
  */
@@ -24,6 +25,7 @@ class DefaultController extends Controller
        return $this->render('ProposalWebBundle:Default:proposal.html.twig',array('title0' => $title[0],'title1'=>$title[1]));
     }
 
+
     /**
      * @Route("/proposal2")
      */
@@ -32,6 +34,7 @@ class DefaultController extends Controller
         $content = "1";
         return $this->render('ProposalWebBundle:Default:proposal2.html.twig',array('content'=>$content));
     }
+
 
     /**
      * @Route("/storybook")
@@ -54,6 +57,7 @@ class DefaultController extends Controller
         return $this->render('ProposalWebBundle:Default:story.html.twig',array('content'=>$content,'form'=>$form->createView()));
     }
 
+
     /**
      * @Route("/confirm", name="confirm")
      */
@@ -73,6 +77,16 @@ class DefaultController extends Controller
 
         $content = 1;
         return $this->render('ProposalWebBundle:Default:confirm.html.twig',array('content'=>$content,'form'=>$form->createView()));
+    }
+
+
+    /**
+     * @Route("/heart", name="heart")
+     */
+    public function heart()
+    {
+        $content = 1;
+        return $this->render('ProposalWebBundle:Default:heart.html.twig',array('content'=>$content));
     }
 
 }
