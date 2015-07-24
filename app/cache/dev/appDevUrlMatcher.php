@@ -57,6 +57,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            if (0 === strpos($pathinfo, '/css/0d9cf33')) {
+                // _assetic_0d9cf33
+                if ($pathinfo === '/css/0d9cf33.css') {
+                    return array (  '_controller' => 'assetic.controller:render',  'name' => '0d9cf33',  'pos' => NULL,  '_format' => 'css',  '_route' => '_assetic_0d9cf33',);
+                }
+
+                if (0 === strpos($pathinfo, '/css/0d9cf33_part_1_')) {
+                    // _assetic_0d9cf33_0
+                    if ($pathinfo === '/css/0d9cf33_part_1_demo_1.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '0d9cf33',  'pos' => 0,  '_format' => 'css',  '_route' => '_assetic_0d9cf33_0',);
+                    }
+
+                    // _assetic_0d9cf33_1
+                    if ($pathinfo === '/css/0d9cf33_part_1_style4_2.css') {
+                        return array (  '_controller' => 'assetic.controller:render',  'name' => '0d9cf33',  'pos' => 1,  '_format' => 'css',  '_route' => '_assetic_0d9cf33_1',);
+                    }
+
+                }
+
+            }
+
             if (0 === strpos($pathinfo, '/css/140a154')) {
                 // _assetic_140a154
                 if ($pathinfo === '/css/140a154.css') {
@@ -293,6 +314,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // proposal_web_default_storybook
         if ($pathinfo === '/storybook') {
             return array (  '_controller' => 'Proposal\\WebBundle\\Controller\\DefaultController::storybook',  '_route' => 'proposal_web_default_storybook',);
+        }
+
+        // confirm
+        if ($pathinfo === '/confirm') {
+            return array (  '_controller' => 'Proposal\\WebBundle\\Controller\\DefaultController::confirm',  '_route' => 'confirm',);
         }
 
         // homepage

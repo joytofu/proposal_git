@@ -39,38 +39,40 @@ class DefaultController extends Controller
     public function storybook(Request $request)
     {
         $form = $this->createFormBuilder() //参数填入对应数据库表对象
-        ->add('answer','text',array('constraint'=>new EqualTo(array('value'=>'屎猪','message'=>'回答错误，请重新输入答案!'))))
+        ->add('answer','text',array('label'=>'','constraints'=>new EqualTo(array('value'=>'屎猪','message'=>'回答错误，请重新输入答案!'))))
         ->add('submit','submit',array('label'=>'提交'))
         ->getForm();
 
         $form->handleRequest($request);
-        $data = $form['answer']->getData();
 
         if($form->isSubmitted() && $form->isValid()){
-
-            //下面是写入数据库操作
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($data);
-            $em->flush();
-
-
-            return $this->redirectToRoute('confirm');
+            return $this->redirectToRoute("confirm");
         }
 
 
         $content = '1';
-        return $this->render('ProposalWebBundle:Default:story.html.twig',array('content'=>$content));
+        return $this->render('ProposalWebBundle:Default:story.html.twig',array('content'=>$content,'form'=>$form->createView()));
     }
 
     /**
-     * @Route('/confirm')
+     * @Route("/confirm", name="confirm")
      */
-    public function confirm()
+    public function confirm(Request $request)
     {
+        $form = $this->createFormBuilder()
+            ->add('checkbox','checkbox',array('label'=>'讨厌，就是屎猪我了啦>_<','constraints'=>new EqualTo(array('value'=>1,'message'=>'请确认以上信息'))))
+            ->add('submit','submit',array('label'=>'确定'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            return $this->redirectToRoute('heart');
+        }
 
 
         $content = 1;
-        return $this->render('ProposalWebBundle:Default:confirm.html.twig',array('content'=>$content));
+        return $this->render('ProposalWebBundle:Default:confirm.html.twig',array('content'=>$content,'form'=>$form->createView()));
     }
 
 }

@@ -4,7 +4,7 @@
         {% endblock %}
 
         {% block private_css %}
-            {% stylesheets '@ProposalWebBundle/Resources/public/css/confirm/s'%}
+            {% stylesheets '@ProposalWebBundle/Resources/public/css/confirm/*'%}
             <link rel="stylesheet" type="text/css" href="{{ asset_url }}"
             {% endstylesheets %}
         {% endblock %}
@@ -75,28 +75,31 @@
 				</div>
 			</section>
             <br>
-            <form method="post">
+            {% block form %}
+                {{ form(form) }}
+            {% endblock %}
+            {#<form method="post">
             <p style="font-size:19px;font-weight:600;">
             <input type="checkbox" name="checkbox">讨厌，就是屎猪我了啦&gt_&lt 
             </p>
             <input  style="width:60px;height:30px;margin-top:20px;font-size:18px" type="submit" name="confirm" value="确定">
-            </form> 
+            </form> #}
             
         </div>
        {% endblock %}
 
-        <?php
+        {#<?php
         $url="../heart/heart2.php";
-        
+
         //判断是否勾选及是否点击提交按钮
         if(isset($_POST['confirm'])){
           if(isset($_POST['checkbox'])){
-             echo "<script language = 'javascript'  type='text/javascript' > ";  
-             echo " window.location.href = '$url' ";  
+             echo "<script language = 'javascript'  type='text/javascript' > ";
+             echo " window.location.href = '$url' ";
              echo " </script>";
 		  }else{
               echo "<script>alert('请确认以上信息')</script>";
               return;
         }
        }
-        ?>
+        ?>#}
