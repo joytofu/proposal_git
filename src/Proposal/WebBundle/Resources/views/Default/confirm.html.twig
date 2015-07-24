@@ -1,29 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-		<meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <title>Sliding Image Panels with CSS3</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Sliding Image Panels with CSS3" />
-        <meta name="keywords" content="sliding, background-image, css3, panel, images, slider" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="css/style4.css" />
-    </head>
-    <body>
+{% extends 'ProposalWebBundle:Default:base.html.twig' %}
+		{% block title %}
+        <title>confirm</title>
+        {% endblock %}
+
+        {% block private_css %}
+            {% stylesheets '@ProposalWebBundle/Resources/public/css/confirm/s'%}
+            <link rel="stylesheet" type="text/css" href="{{ asset_url }}"
+            {% endstylesheets %}
+        {% endblock %}
+
+
+        {% block main_content %}
         <div class="container">
 			<!-- Codrops top bar -->
             <div class="codrops-top">
-                <!-- <a href="">
-                    <strong>&laquo; Previous Demo: </strong>CSS Buttons with Pseudo-elements
-                </a> -->
+
                 <span class="right">
 					<strong><a href="" >Images by Kinson Chow</a></strong>
                 </span>
                 <div class="clr"></div>
-            </div><!--/ Codrops top bar -->
+            </div>
 			<header>
 				<h1>请认真确认以下身份信息，<span><strong>以便顺利兑奖</strong></span></h1>
 				<p class="codrops-demos">
@@ -87,6 +83,8 @@
             </form> 
             
         </div>
+       {% endblock %}
+
         <?php
         $url="../heart/heart2.php";
         
@@ -102,5 +100,3 @@
         }
        }
         ?>
-    </body>
-</html>

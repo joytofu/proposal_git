@@ -10,3 +10,5 @@
 /composer.phar
 /vendor/
 /web/bundles/
+*.log
+app/logs/dev.log
