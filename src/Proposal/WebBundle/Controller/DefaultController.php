@@ -68,7 +68,7 @@ class DefaultController extends Controller
     public function confirm()
     {
         $content = 1;
-        return render('ProposalWebBundle:Default:confirm.html.twig',array('content'=>$content));
+        return $this->render('ProposalWebBundle:Default:confirm.html.twig',array('content'=>$content));
     }
 
 }
