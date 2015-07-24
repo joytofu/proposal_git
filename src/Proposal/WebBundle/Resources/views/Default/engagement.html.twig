@@ -1,25 +1,28 @@
-{% extends 'ProposalWebBundle:Default:base.html.twig' %}
+{% extends 'ProposalWebBundle:Default:base.html.twig'%}
 
 {% block title %}
   <title>engagement</title>
 {% endblock %}
 
-{% block private_js %}
-    {% stylesheets '@ProposalWebBundle/Resources/public/css/engagement/*' %}
-    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"
+{% block private_css %}
+    {% stylesheets '@ProposalWebBundle/Resources/public/css/engagement/*'%}
+    <link rel="stylesheet" href="{{ seet_url }}" type="text/css" />
     {% endstylesheets %}
 {% endblock %}
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="fonts/font.css" type="text/css" />
+    <link rel="stylesheet" href="css/base.css" type="text/css" />
+    <link rel="stylesheet" href="css/button.css" type="text/css" />
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="css/manhuaDate.1.0.css" />
+    <!--<script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-2.1.1.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <!--modal effect-->
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
 
-{% block private_js %}
-    {% javascripts '@ProposalWebBundle/Resources/public/js/engagement/js/jquery-2.1.4.min.js' %}
-    <script type="text/javascript" src="{{ asset_url }}"
-    {% endjavascripts %}
-{% endblock %}
 
-
-
-
-{% block main_content %}
+{% main_content %}
   <div style="text-align:center;clear:both;">
 </div>
   <div class="wrapper">
@@ -233,6 +236,7 @@
                   <li>现在请移步到车库领取你的终极大奖！</li>
               </ul>
               <button  class="md-close" id="p12">好紧张，现在立刻去！么么哒！<(￣3￣)> </button>
+
           </div>
       </div>
   </div>
@@ -372,6 +376,7 @@
 
   </script>
 
+
     <div class="md-overlay"></div><!-- the overlay element -->
 
 		<script src="js2/classie.js"></script>
@@ -382,10 +387,10 @@
 			// this is important for IEs
 			var polyfilter_scriptpath = '/js2/';
 		</script>
-      {% block private_js2 %}
 		<script src="js2/cssParser.js"></script>
 		<script src="js2/css-filters-polyfill.js"></script>
         <script src="js/jquery-ui-datepicker.js"></script>
+
 
 
 
@@ -395,7 +400,6 @@
   <script type="text/javascript" src="js/manhuaDate.1.0.js"></script>
   <script type="text/javascript">
       $(function (){
-
           $("input.mh_date").manhuaDate({
               Event : "click",//可选
               Left : 0,//弹出时间停靠的左边位置

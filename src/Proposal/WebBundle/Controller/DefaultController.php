@@ -89,4 +89,14 @@ class DefaultController extends Controller
         return $this->render('ProposalWebBundle:Default:heart.html.twig',array('content'=>$content));
     }
 
+
+    /**
+     * @Route("/engagement", name="engagement")
+     */
+    public function engagement()
+    {
+        $content = 1;
+        return $this->render('ProposalWebBundle:Default:engagement.html.twig',array('content'=>$content));
+    }
+
 }
