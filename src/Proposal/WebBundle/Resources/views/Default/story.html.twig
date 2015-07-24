@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<?php
+{% extends 'ProposalWebBundle:Default:base.html.twig' %}
+{#<?php
                 $url="../slidingImage/index4.php";
 				
                 if(isset($_POST['submit'])){
@@ -12,38 +12,30 @@
                   echo "<script>alert('回答错误，请重新输入答案！')</script>";
                   }
 				  } 
-                  ?>
-<html>
-    <head>
-        <title>Moleskine Notebook with jQuery Booklet</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="description" content="Moleskine Notebook with jQuery Booklet" />
-        <meta name="keywords" content="jquery, book, flip, pages, moleskine, booklet, plugin, css3 "/>
-		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+                  ?>#}
+       {% block title %}
+        <title>Love Story of Piggy Pig</title>
+       {% endblock %}
 
-		<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
-		<script src="booklet/jquery.easing.1.3.js" type="text/javascript"></script>
-		<script src="booklet/jquery.booklet.1.1.0.min.js" type="text/javascript"></script>
+       {% block private_css %}
+           {% stylesheets '@ProposalWebBundle/Resources/public/css/storybook/*'%}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+           {% endstylesheets %}
+       {% endblock %}
 
-		<link href="booklet/jquery.booklet.1.1.0.css" type="text/css" rel="stylesheet" media="screen" />
-		<link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="css/fonts.css" type="text/css" media="screen"/>
-        <link rel="stylesheet" href="css/font-awesome.css" type="text/css"  />
+        {% block private_js %}
+            {% javascripts
+            '@ProposalWebBundle/Resources/public/js/storybook/jquery-1.4.4.min.js'
+            '@ProposalWebBundle/Resources/public/js/storybook/booklet/*'
+            %}
+            {% endjavascripts %}
+        {% endblock %}
 
-		<!--<script src="cufon/cufon-yui.js" type="text/javascript"></script>
-		<script src="cufon/ChunkFive_400.font.js" type="text/javascript"></script>
-		<script src="cufon/Note_this_400.font.js" type="text/javascript"></script>
-        <script src="cufon/huakang.font.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			Cufon.replace('h1,p,.b-counter');
-			Cufon.replace('.book_wrapper a', {hover:true});
-			Cufon.replace('.title', {textShadow: '1px 1px #C59471', fontFamily:'ChunkFive'});
-			Cufon.replace('.reference a', {textShadow: '1px 1px #C59471', fontFamily:'ChunkFive'});
-			Cufon.replace('.loading', {textShadow: '1px 1px #000', fontFamily:'ChunkFive'});
-		</script> -->
+
+
        
-    </head>
-    <body>
+
+  {% block main_content %}
 		<h1 class="title">Love Story of Lil' Piggy Pig</h1>
 		<div class="book_wrapper">
 			<a id="next_page_button"></a>
@@ -259,5 +251,4 @@
 				
 			});
         </script>
-    </body>
-</html>
+ {% endblock %}

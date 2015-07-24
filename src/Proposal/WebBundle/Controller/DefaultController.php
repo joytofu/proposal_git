@@ -5,6 +5,9 @@ namespace Proposal\WebBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Validator\Constraints\EqualTo;
 
 /**
  * Route("/")
@@ -29,4 +32,37 @@ class DefaultController extends Controller
         $content = "1";
         return $this->render('ProposalWebBundle:Default:proposal2.html.twig',array('content'=>$content));
     }
+
+    /**
+     * @Route("/storybook")
+     */
+    public function storybook(Request $request)
+    {
+        $form = $this->createFormBuilder() //参数填入对应数据库表对象
+        ->add('answer','text',array('constraint'=>new EqualTo(array('value'=>'屎猪','message'=>'回答错误，请重新输入答案!'))))
+        ->add('submit','submit',array('label'=>'提交'))
+        ->getForm();
+
+        $form->handleRequest($request);
+        $data = $form['answer']->getData();
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            return $this->redirectToRoute('confirm');
+        }
+
+
+        $content = '1';
+        return $this->render('ProposalWebBundle:Default:story.html.twig',array('content'=>$content));
+    }
+
+    /**
+     * @Route('/confirm')
+     */
+    public function confirm()
+    {
+        $content = 1;
+        return render('ProposalWebBundle:Default:confirm.html.twig',array('content'=>$content));
+    }
+
 }
