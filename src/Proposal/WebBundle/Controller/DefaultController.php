@@ -53,7 +53,7 @@ class DefaultController extends Controller
             $em->persist($data);
             $em->flush();
 
-            
+
             return $this->redirectToRoute('confirm');
         }
 
