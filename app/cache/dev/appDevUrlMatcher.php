@@ -397,6 +397,15 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // proposal_web_admin_admin_index
+        if (rtrim($pathinfo, '/') === '/admin') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'proposal_web_admin_admin_index');
+            }
+
+            return array (  '_controller' => 'Proposal\\WebBundle\\Controller\\AdminController::admin_index',  '_route' => 'proposal_web_admin_admin_index',);
+        }
+
         if (0 === strpos($pathinfo, '/proposal')) {
             // proposal_web_default_proposal1
             if ($pathinfo === '/proposal1') {
