@@ -26,48 +26,98 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Controller/DefaultController.php">
+      <file leaf-file-name="Proposal1.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Proposal1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.028571" vertical-offset="2716" max-vertical-offset="3564">
-              <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
+            <state vertical-scroll-proportion="-20.742857" vertical-offset="1848" max-vertical-offset="3003">
+              <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
               <folding>
-                <element signature="e#49#106#0#PHP" expanded="true" />
+                <element signature="e#44#92#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/base.html.twig">
+      <file leaf-file-name="Proposal2.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Proposal2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8857143" vertical-offset="198" max-vertical-offset="1419">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.6933798" vertical-offset="2175" max-vertical-offset="3036">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+              <folding>
+                <element signature="e#44#92#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Storybook.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Storybook.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.0" vertical-offset="3066" max-vertical-offset="3960">
+              <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+              <folding>
+                <element signature="e#44#92#0#PHP" expanded="true" />
+                <marker date="1437784198953" expanded="true" signature="291:644" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Confirm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Confirm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.342857" vertical-offset="1152" max-vertical-offset="2046">
+              <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+              <folding>
+                <element signature="e#44#92#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Engagement.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Engagement.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.0" vertical-offset="3924" max-vertical-offset="4818">
+              <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+              <folding>
+                <element signature="e#44#92#0#PHP" expanded="true" />
+                <marker date="1437784198923" expanded="true" signature="294:722" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Form.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.0" vertical-offset="3132" max-vertical-offset="4026">
+              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+              <folding>
+                <element signature="e#44#92#0#PHP" expanded="true" />
+                <marker date="1437784198932" expanded="true" signature="383:736" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Profile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../kc_project/src/Kctest/WebBundle/Entity/Profile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.028572" vertical-offset="198" max-vertical-offset="2937">
+              <caret line="25" column="7" selection-start-line="22" selection-start-column="4" selection-end-line="25" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="engagement.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/engagement.html.twig">
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../kc_project/src/Kctest/WebBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4787736" vertical-offset="670" max-vertical-offset="4191">
-              <caret line="368" column="49" selection-start-line="368" selection-start-column="49" selection-end-line="368" selection-end-column="49" />
+            <state vertical-scroll-proportion="15.085714" vertical-offset="891" max-vertical-offset="7293">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding>
-                <element signature="n#div#1;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#button#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#button#1;n#!!top" expanded="true" />
-                <element signature="n#div#4;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#strong#0;n#p#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-                <element signature="n#div#6;n#!!top" expanded="false" />
-                <element signature="n#div#7;n#!!top" expanded="false" />
-                <element signature="n#div#8;n#!!top" expanded="false" />
-                <element signature="n#div#9;n#!!top" expanded="false" />
-                <element signature="n#div#10;n#!!top" expanded="false" />
-                <element signature="n#div#11;n#!!top" expanded="false" />
-                <element signature="n#div#12;n#!!top" expanded="false" />
-                <element signature="n#script#1;n#!!top" expanded="false" />
+                <element signature="e#41#89#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,7 +126,7 @@
       <file leaf-file-name="heart.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/heart.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.542857" vertical-offset="0" max-vertical-offset="594">
+            <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="594">
               <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="e#58#111#0#Twig" expanded="false" />
@@ -85,26 +135,6 @@
                 <element signature="e#460#801#0#Twig" expanded="false" />
                 <element signature="e#805#4038#0#Twig" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../proposal/engagement/engagement/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="4620">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../proposal/engagement/engagement/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.085714" vertical-offset="0" max-vertical-offset="13959">
-              <caret line="16" column="70" selection-start-line="5" selection-start-column="3" selection-end-line="16" selection-end-column="70" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -135,6 +165,18 @@
         <option value="F:/巨牛网站/hkgbi(latest)/web/tpl/www/msg_products_unavailable(zhixuanniugu).html" />
         <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/engagement.html.twig" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/proposal1.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/proposal2.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/storybook.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/confirm.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/engagement.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/form.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Proposal1.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Engagement.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Confirm.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Storybook.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Form.php" />
+        <option value="$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Proposal2.php" />
       </list>
     </option>
   </component>
@@ -171,6 +213,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,175 +344,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Default" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proposal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proposal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proposal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proposal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="proposal_git" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proposal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -516,6 +396,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -523,9 +406,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -545,28 +425,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Framework" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18162394" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1832265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286908" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3264865" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -590,12 +470,42 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/heart.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="594">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#58#111#0#Twig" expanded="false" />
+            <element signature="e#113#266#0#Twig" expanded="false" />
+            <element signature="e#268#458#0#Twig" expanded="false" />
+            <element signature="e#460#801#0#Twig" expanded="false" />
+            <element signature="e#805#4038#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../proposal/engagement/engagement/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4620">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../proposal/engagement/engagement/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="13959">
+          <caret line="16" column="70" selection-start-line="5" selection-start-column="3" selection-end-line="16" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="3366" max-vertical-offset="3564">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding>
-            <element signature="e#49#106#0#PHP" expanded="true" />
+            <element signature="e#49#106#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -612,22 +522,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14025">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#button#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#button#1;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#strong#0;n#p#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#div#6;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#!!top" expanded="false" />
-            <element signature="n#div#12;n#!!top" expanded="false" />
-            <element signature="n#script#1;n#!!top" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -636,7 +531,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="164" max-vertical-offset="972">
           <caret line="29" column="103" selection-start-line="29" selection-start-column="103" selection-end-line="29" selection-end-column="103" />
           <folding>
-            <element signature="e#49#106#0#PHP" expanded="true" />
+            <element signature="e#49#106#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -653,7 +548,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6642">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,7 +555,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -670,7 +563,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="729">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#49#106#0#PHP" expanded="true" />
+            <element signature="e#49#106#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,7 +572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="594">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,7 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29256967" vertical-offset="0" max-vertical-offset="6642">
           <caret line="7" column="59" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.501548" vertical-offset="0" max-vertical-offset="646">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.833333" vertical-offset="4484" max-vertical-offset="7074">
           <caret line="177" column="19" selection-start-line="177" selection-start-column="19" selection-end-line="177" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +673,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3482972" vertical-offset="6228" max-vertical-offset="9882">
           <caret line="260" column="20" selection-start-line="260" selection-start-column="20" selection-end-line="260" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -813,7 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33236575" vertical-offset="446" max-vertical-offset="38529">
           <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -821,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.4690402" vertical-offset="81" max-vertical-offset="2997">
           <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,16 +743,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1254">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.028571" vertical-offset="2716" max-vertical-offset="3564">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2716" max-vertical-offset="3564">
           <caret line="94" column="7" selection-start-line="94" selection-start-column="7" selection-end-line="94" selection-end-column="7" />
           <folding>
-            <element signature="e#49#106#0#PHP" expanded="true" />
+            <element signature="e#49#106#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,13 +768,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.1947904" vertical-offset="3704" max-vertical-offset="4587">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../proposal/engagement/engagement/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.085714" vertical-offset="0" max-vertical-offset="13959">
+        <state vertical-scroll-proportion="0.0" vertical-offset="528" max-vertical-offset="13959">
           <caret line="16" column="70" selection-start-line="5" selection-start-column="3" selection-end-line="16" selection-end-column="70" />
           <folding />
         </state>
@@ -897,7 +781,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/heart.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.542857" vertical-offset="0" max-vertical-offset="594">
+        <state vertical-scroll-proportion="0.0" vertical-offset="264" max-vertical-offset="594">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="e#58#111#0#Twig" expanded="false" />
@@ -909,33 +793,99 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/engagement.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35023585" vertical-offset="12144" max-vertical-offset="13563">
+          <caret line="377" column="0" selection-start-line="377" selection-start-column="0" selection-end-line="377" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8857143" vertical-offset="198" max-vertical-offset="1419">
+        <state vertical-scroll-proportion="0.07665505" vertical-offset="198" max-vertical-offset="1419">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Resources/views/Default/engagement.html.twig">
+    <entry file="file://$PROJECT_DIR$/../kc_project/src/Kctest/WebBundle/Entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4787736" vertical-offset="670" max-vertical-offset="4191">
-          <caret line="368" column="49" selection-start-line="368" selection-start-column="49" selection-end-line="368" selection-end-column="49" />
+        <state vertical-scroll-proportion="15.085714" vertical-offset="891" max-vertical-offset="7293">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding>
-            <element signature="n#div#1;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#button#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#button#1;n#!!top" expanded="true" />
-            <element signature="n#div#4;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#strong#0;n#p#0;n#div#0;n#div#0;n#div#5;n#!!top" expanded="true" />
-            <element signature="n#div#6;n#!!top" expanded="false" />
-            <element signature="n#div#7;n#!!top" expanded="false" />
-            <element signature="n#div#8;n#!!top" expanded="false" />
-            <element signature="n#div#9;n#!!top" expanded="false" />
-            <element signature="n#div#10;n#!!top" expanded="false" />
-            <element signature="n#div#11;n#!!top" expanded="false" />
-            <element signature="n#div#12;n#!!top" expanded="false" />
-            <element signature="n#script#1;n#!!top" expanded="false" />
+            <element signature="e#41#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Proposal1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.742857" vertical-offset="1848" max-vertical-offset="3003">
+          <caret line="78" column="21" selection-start-line="78" selection-start-column="21" selection-end-line="78" selection-end-column="21" />
+          <folding>
+            <element signature="e#44#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Confirm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.342857" vertical-offset="1152" max-vertical-offset="2046">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+          <folding>
+            <element signature="e#44#92#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Engagement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.0" vertical-offset="3924" max-vertical-offset="4818">
+          <caret line="138" column="5" selection-start-line="138" selection-start-column="5" selection-end-line="138" selection-end-column="5" />
+          <folding>
+            <element signature="e#44#92#0#PHP" expanded="true" />
+            <marker date="1437784198923" expanded="true" signature="294:722" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../kc_project/src/Kctest/WebBundle/Entity/Profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.028572" vertical-offset="198" max-vertical-offset="2937">
+          <caret line="25" column="7" selection-start-line="22" selection-start-column="4" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Storybook.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.0" vertical-offset="3066" max-vertical-offset="3960">
+          <caret line="112" column="0" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#92#0#PHP" expanded="true" />
+            <marker date="1437784198953" expanded="true" signature="291:644" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.0" vertical-offset="3132" max-vertical-offset="4026">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#92#0#PHP" expanded="true" />
+            <marker date="1437784198932" expanded="true" signature="383:736" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Proposal/WebBundle/Entity/Proposal2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6933798" vertical-offset="2175" max-vertical-offset="3036">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#92#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

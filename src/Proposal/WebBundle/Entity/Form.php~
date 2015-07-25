@@ -1,0 +1,37 @@
+<?php
+namespace Proposal\WebBundle\Entity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping\OneToOne;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+/**
+ * @ORM\Entity(repositoryClass="FormRepository")
+ * @ORM\Table(name="form")
+ */
+class Form{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $title;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $content;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $answer;
+
+}
