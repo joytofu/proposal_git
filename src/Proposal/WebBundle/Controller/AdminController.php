@@ -42,7 +42,7 @@ class AdminController extends Controller{
         if($form->isSubmitted() && $form->isValid()){
             $em = $this->getDoctrine()->getManager();
             $data = $em->getRepository($repository);
-                
+
         }
     }
 }
