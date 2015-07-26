@@ -1,10 +1,13 @@
 {% extends 'ProposalWebBundle:Default:base.html.twig' %}
 
 {% block main_content %}
+<ul>
     {% for data1 in data %}
-{{ data1 }}
-        {% endfor %}
+<li>{{ data1.title }}</li>
+<li>{{ data1.content }}</li>
+{% endfor %}
+    </ul>
 <div class="button-middle">
-    <a href="/admin_post_new"><button class="button blue" ><div class="shine"></div>create new post</button></a>
+    <a href="/admin/post_new"><button class="button blue" ><div class="shine"></div>create new post</button></a>
 </div>
 {% endblock %}
