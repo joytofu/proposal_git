@@ -1,0 +1,19 @@
+{{ form_start(form) }}
+        <div class="post_title">
+            {{ form_label(form.title) }}
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title) }}
+        </div>
+
+
+    {{ form_label(form.content) }}
+    {{ form_errors(form.content) }}
+    <div class="post_content">
+    {{ form_widget(form.content) }}
+</div>
+
+<div class="button-middle">
+    <button class="button blue" type="submit"><div class="shine"></div>post {{ button_name }}</button>
+</div>
+
+{{ form_end(form) }}

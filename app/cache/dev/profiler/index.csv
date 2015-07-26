@@ -1100,3 +1100,16 @@ c612f4,127.0.0.1,GET,http://127.0.0.1:8000/admin/,1437899607,733378,200
 8d377f,127.0.0.1,GET,http://127.0.0.1:8000/post_new,1437900421,,404
 df7b32,127.0.0.1,GET,http://127.0.0.1:8000/admin/,1437900432,,200
 1e010c,127.0.0.1,GET,http://127.0.0.1:8000/admin/post_new,1437900439,,200
+5af64d,127.0.0.1,GET,http://127.0.0.1:8000/admin/,1437901365,,200
+34c39a,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915350,e6bef6,200
+e6bef6,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915350,,500
+18b0d7,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915374,b5d11f,200
+b5d11f,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915374,,500
+7191a9,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915449,1c2bc3,200
+1c2bc3,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915449,,500
+b88a4e,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915479,,200
+487d69,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915597,,200
+1dace2,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915629,,200
+61bebe,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915696,,200
+7f7269,127.0.0.1,POST,http://127.0.0.1:8000/admin/new_proposal,1437915733,,200
+7ac80f,127.0.0.1,GET,http://127.0.0.1:8000/admin/new_proposal,1437915785,,200

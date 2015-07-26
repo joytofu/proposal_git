@@ -1,5 +1,5 @@
-{% extends 'ProposalWebBundle:Default:base.html.twig' %}
+{% extends 'ProposalWebBundle:Default:admin/base_admin.html.twig' %}
 
-{% block main_content %}
-{{ form(form) }}
+{% block main_form %}
+{{ include('ProposalWebBundle:Default:admin/form.html.twig') }}
 {% endblock %}

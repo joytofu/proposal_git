@@ -28,34 +28,60 @@ class Proposal{
      */
     protected $content;
 
-    /**
-     * @ORM\Column(type="string")
-     */
-    protected $choice;
 
     /**
-     * @ORM\Column(type="string")
+     * Get id
+     *
+     * @return integer 
      */
-    protected $image;
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
-     * @ORM\Column(type="text")
+     * Set title
+     *
+     * @param string $title
+     * @return Proposal
      */
-    protected $question;
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    
+        return $this;
+    }
 
     /**
-     * @ORM\Column(type="text")
+     * Get title
+     *
+     * @return string 
      */
-    protected $answer;
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
     /**
-     * @Assert\Choice(
-     *     choices={"proposal1","proposal2","storybook","confirm","heart","engagement"},
-     *     message="choose a valid category.")
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="proposals")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * Set content
+     *
+     * @param string $content
+     * @return Proposal
      */
-    protected $category;
+    public function setContent($content)
+    {
+        $this->content = $content;
+    
+        return $this;
+    }
 
-   
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
 }

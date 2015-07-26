@@ -1,35 +1,97 @@
 <?php
+
 namespace Proposal\WebBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
+
 /**
- * @ORM\Entity(repositoryClass="StorybookRepository")
- * @ORM\Table(name="storybook")
+ * Storybook
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Proposal\WebBundle\Entity\StorybookRepository")
  */
-class Storybook{
+class Storybook
+{
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @ORM\Column(name="content",type="text")
+     */
+    private $content;
 
     /**
      * @ORM\Column(type="string")
      */
-    protected $title;
+    private $images;
+
 
     /**
-     * @ORM\Column(type="string")
+     * Get id
+     *
+     * @return integer 
      */
-    protected $content;
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
-     * @ORM\Column(type="string")
+     * Set title
+     *
+     * @param string $title
+     * @return Storybook
      */
-    protected $image;
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    
+        return $this;
+    }
 
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return Storybook
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    
+        return $this;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
 }

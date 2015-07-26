@@ -39,6 +39,11 @@ class Category
         $this->proposals = new ArrayCollection();
     }
 
+    function __toString()
+    {
+        return strval($this->name);
+    }
+
 
     /**
      * Get id

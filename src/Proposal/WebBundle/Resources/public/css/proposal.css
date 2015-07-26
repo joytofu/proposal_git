@@ -109,3 +109,26 @@
 .q-z {
     font-size: 16px !important;
 }
+
+.main_block{
+    width:80%;
+    border: 1px double black;
+    border-radius: 5px;
+    height:auto;
+    margin-left:10%
+}
+
+.post_title{
+    width:100%;
+    margin:5% auto;
+    border: 1px solid #4b3f5e;
+    border-radius: 7px;
+}
+
+.post_content{
+    width:100%;
+    margin:5% auto;
+    border:1px solid #4b3f5e;
+    border-radius:7px;
+    height:300px;
+}

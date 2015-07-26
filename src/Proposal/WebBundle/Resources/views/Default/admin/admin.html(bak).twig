@@ -1,0 +1,25 @@
+{% extends 'ProposalWebBundle:Default:base.html.twig' %}
+
+{% block main_content %}
+<ul>
+    {% for data1 in data %}
+<li>{{ data1.title }}</li>
+<li>{{ data1.content }}</li>
+{% endfor %}
+    </ul>
+<div class="button-middle">
+    <a href="/admin/proposal1"><button class="button blue" ><div class="shine"></div>new proposal1</button></a>
+</div>
+    <div class="button-middle">
+        <a href="/admin/proposal2"><button class="button blue" ><div class="shine"></div>new proposal2</button></a>
+    </div>
+    <div class="button-middle">
+        <a href="/admin/storybook"><button class="button blue" ><div class="shine"></div>new storybook</button></a>
+    </div>
+    <div class="button-middle">
+        <a href="/admin/heart"><button class="button blue" ><div class="shine"></div>new heart</button></a>
+    </div>
+    <div class="button-middle">
+        <a href="/admin/engagement"><button class="button blue" ><div class="shine"></div>new engagement</button></a>
+    </div>
+{% endblock %}
