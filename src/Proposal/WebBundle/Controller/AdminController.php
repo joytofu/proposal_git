@@ -8,6 +8,7 @@ use Proposal\WebBundle\Entity\Proposal;
 use Proposal\WebBundle\Entity\Category;
 use Proposal\WebBundle\Entity\Proposal2;
 use Proposal\WebBundle\Entity\Storybook;
+use Proposal\WebBundle\Form\Proposal1Type;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -24,7 +25,7 @@ use Symfony\Bridge\Doctrine;
 class AdminController extends Controller{
 
     /**
-     * @Route("/")
+     * @Route("/",name="admin_index")
      */
     public function admin_index()
     {
@@ -39,25 +40,24 @@ class AdminController extends Controller{
     }
 
     /**
-     * @Route("/new_proposal")
+     * @Route("/new_proposal",name="new_proposal")
      */
     public function new_proposal(Request $request)
     {
 
         $proposal = new Proposal();
-        $form = $this->createFormBuilder($proposal)
-            ->add('title','text')
-            ->add('content','textarea')
-            ->getForm();
+        $form = $this->createForm(new Proposal1Type(),$proposal);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
+            echo "<script>alert('创建成功!')</script>";
             $em = $this->getDoctrine()->getManager();
             $em->persist($proposal);
             $em->flush();
+            return $this->redirectToRoute('admin_index');
         }
-            return $this->render('ProposalWebBundle:Default:admin/admin_post_new.html.twig',array('button_name'=>'proposal','form'=>$form->createView()));
+            return $this->render('ProposalWebBundle:Default:admin/new_proposal.html.twig',array('button_name'=>'proposal','form'=>$form->createView()));
         }
 
     /**
