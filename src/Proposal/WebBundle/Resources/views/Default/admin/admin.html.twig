@@ -1,25 +1,87 @@
 {% extends 'ProposalWebBundle:Default:base.html.twig' %}
 
 {% block main_content %}
-<ul>
-    {% for data1 in data %}
-<li>{{ data1.title }}</li>
-<li>{{ data1.content }}</li>
-{% endfor %}
-    </ul>
-<div class="button-middle">
-    <a href="/admin/proposal1"><button class="button blue" ><div class="shine"></div>new proposal1</button></a>
+<div class="admin_block">
+    <!--proposal1-->
+    <div class="fix_block">
+        <div class="show_block">
+            {% for value in data1 %}
+                <li>{{ value.title }}</li>
+            {% endfor %}
+        </div>
+        <div class="button-middle" style="font-size: 18px !important;">
+        <a href="{{ path('new_proposal') }}" target="_blank"><button class="button blue" ><div class="shine"></div>new proposal1</button></a>
+        </div>
+    </div>
+
+    <!--proposal2-->
+    <div class="fix_block">
+        <div class="show_block">
+                {% for value in data2 %}
+                    <li>{{ value.question }}</li>
+                {% endfor %}
+        </div>
+        <div class="button-middle" style="font-size: 18px !important;">
+        <a href="{{ path('new_proposal2') }}" target="_blank"><button class="button blue" ><div class="shine"></div>new proposal2</button></a>
+        </div>
+    </div>
+
+    <!--storybook-->
+    <div class="fix_block">
+        <div class="show_block">
+            {% for value in data3 %}
+                <li>{{ value.question }}</li>
+            {% endfor %}
+        </div>
+        <div class="button-middle" style="font-size: 18px !important;">
+        <a href="{{ path('new_storybook') }}" target="_blank"><button class="button blue" ><div class="shine"></div>new storybook</button></a>
+        </div>
+    </div>
+
+    <!--confirm-->
+    <div class="fix_block">
+        <div class="show_block">
+            {% for value in data4 %}
+                <li>{{ value.images }}</li>
+            {% endfor %}
+        </div>
+        <div class="button-middle" style="font-size: 18px !important;">
+        <a href="{{ path('new_confirm') }}" target="_blank"><button class="button blue" ><div class="shine"></div>new confirm</button></a>
+        </div>
+    </div>
+
+    <!--engagement-->
+    <div class="fix_block">
+        <div class="show_block">
+            {% for value in data5 %}
+                <li>{{ value.title }}</li>
+            {% endfor %}
+        </div>
+        <div class="button-middle" style="font-size: 18px !important;">
+        <a href="{{ path('new_engagement') }}" target="_blank"><button class="button blue" ><div class="shine"></div>new engagement</button></a>
+        </div>
+    </div>
 </div>
-    <div class="button-middle">
-        <a href="/admin/proposal2"><button class="button blue" ><div class="shine"></div>new proposal2</button></a>
-    </div>
-    <div class="button-middle">
-        <a href="/admin/storybook"><button class="button blue" ><div class="shine"></div>new storybook</button></a>
-    </div>
-    <div class="button-middle">
-        <a href="/admin/heart"><button class="button blue" ><div class="shine"></div>new heart</button></a>
-    </div>
-    <div class="button-middle">
-        <a href="/admin/engagement"><button class="button blue" ><div class="shine"></div>new engagement</button></a>
-    </div>
+{#<ul>
+    {% for value in data1 %}
+<li>{{ value.title }}</li>
+{% endfor %}
+
+    {% for value in data2 %}
+        <li>{{ value.question }}</li>
+    {% endfor %}
+
+    {% for value in data3 %}
+        <li>{{ value.title }}</li>
+    {% endfor %}
+
+    {% for value in data4 %}
+        <li>{{ value.images }}</li>
+    {% endfor %}
+
+    {% for value in data5 %}
+        <li>{{ value.title }}</li>
+    {% endfor %}
+    </ul>#}
+
 {% endblock %}

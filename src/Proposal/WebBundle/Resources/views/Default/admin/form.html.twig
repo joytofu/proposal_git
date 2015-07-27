@@ -1,7 +1,8 @@
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {{ form_start(form) }}
     <div id="post">
-        <div class="form-group-sm">
+
+        <div class="form-group">
             {{ form_label(form.title)}}
             {{ form_errors(form.title) }}
             {{ form_widget(form.title)}}

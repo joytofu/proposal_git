@@ -1,0 +1,20 @@
+{% extends 'ProposalWebBundle:Default:admin/base_admin.html.twig' %}
+{% block title %}new_confirm{% endblock %}
+{% block main_form %}
+    <h1 style="text-align: center">Confirm</h1>
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+    {{ form_start(form) }}
+    <div id="post">
+
+        <div class="form-group">
+            {{ form_label(form.images)}}
+            {{ form_errors(form.images) }}
+            {{ form_widget(form.images)}}
+        </div>
+
+        <div class="button-middle">
+            <button class="button blue" type="submit"><div class="shine"></div>post {{ button_name }}</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

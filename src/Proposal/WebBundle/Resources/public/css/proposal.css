@@ -133,3 +133,33 @@
     border-radius:7px;
     height:300px;
 }
+
+.admin_block{
+    width:100%;
+    height:auto;
+    border:0;
+    padding:3%;
+}
+
+.admin_block .fix_block{
+    width:230px;
+    height:600px;
+    border:0;
+    margin:20px;
+    float: left;
+}
+.admin_block .fix_block .show_block{
+    width:230px;
+    height:400px;
+    border:1px solid black;
+    border-radius: 7px;
+    margin-bottom:20px;
+    padding:15px;
+    font-size:14px;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.admin_block .fix_block .show_block li{
+    margin-bottom:7px;
+}

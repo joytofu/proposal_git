@@ -30,13 +30,18 @@ class AdminController extends Controller{
     public function admin_index()
     {
 
-        $data = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Proposal')->findAll();
+        $data1 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Proposal')->findAll();
+        $data2 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Proposal2')->findAll();
+        $data3 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Storybook')->findAll();
+        $data4 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Confirm')->findAll();
+        $data5 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Engagement')->findAll();
 
-        if(!$data){
+
+        /*if(!$data1||!$data2||!$data3||!$data4||!$data5){
             throw $this->createNotFoundException('No data at all!!');
-        }
+        }*/
 
-        return $this->render('ProposalWebBundle:Default:admin/admin.html.twig',array('data'=>$data));
+        return $this->render('ProposalWebBundle:Default:admin/admin.html.twig',array('data1'=>$data1,'data2'=>$data2,'data3'=>$data3,'data4'=>$data4,'data5'=>$data5));
     }
 
     /**
@@ -55,48 +60,46 @@ class AdminController extends Controller{
             $em = $this->getDoctrine()->getManager();
             $em->persist($proposal);
             $em->flush();
-            return $this->redirectToRoute('admin_index');
+            return $this->redirectToRoute('new_proposal');
         }
             return $this->render('ProposalWebBundle:Default:admin/new_proposal.html.twig',array('button_name'=>'proposal','form'=>$form->createView()));
         }
 
     /**
-     * @Route("/new_proposal2")
+     * @Route("/new_proposal2",name="new_proposal2")
      */
     public function new_proposal2(Request $request)
     {
         $proposal2 = new Proposal2();
         $form = $this->createFormBuilder($proposal2)
-            ->add('question','text')
+            ->add('question','textarea',array('attr'=>array('rows'=>5)))
             ->add('option1','text')
             ->add('option2','text')
             ->add('option3','text')
             ->add('option4','text')
             ->add('option5','text')
-            ->add('提交','submit')
             ->getForm();
 
         $form->handleRequest($request);
         if($form->isSubmitted()&&$form->isValid()){
+            echo "<script>alert('创建成功!')</script>";
             $em = $this->getDoctrine()->getManager();
             $em->persist($proposal2);
             $em->flush();
-            echo "<script>alert('创建成功！')</script>";
-            return $this->redirectToRoute("/admin/");
+            return $this->redirectToRoute("new_proposal2");
         }
         return $this->render('ProposalWebBundle:Default:admin/new_proposal2.html.twig',array('button_name'=>'proposal2','form'=>$form->createView()));
     }
 
     /**
-     * @Route("/new_storybook")
+     * @Route("/new_storybook",name="new_storybook")
      */
     public function new_storybook(Request $request){
         $storybook = new Storybook();
         $form = $this->createFormBuilder($storybook)
             ->add('title','text')
-            ->add('content','textarea')
+            ->add('content','textarea',array('attr'=>array('rows'=>10)))
             ->add('images','file',array('label'=>'插图'))
-            ->add('submit','submit')
             ->getForm();
 
         $form->handleRequest($request);
@@ -104,70 +107,73 @@ class AdminController extends Controller{
 
         if($form->isSubmitted()&&$form->isValid()){
             $dir = dirname(__DIR__)."\\"."images";  //文件储存路径
-            $fileSavedName = $file->getClientOriginalName();  //上传后的文件名
+            $ext = $file->getClientOriginalExtension(); //获取文件后缀
+            //$fileSavedName = $file->getClientOriginalName();  //上传后的文件名
+            $fileSavedName = md5(mt_rand(77,777)).".".$ext; //上传后的文件名
             $file->move($dir,$fileSavedName);  //对上传的文件进行处理，从临时文件夹移动到定义的文件夹中以及命名文件
             $storybook->setImages($dir."\\".$fileSavedName);
+            echo "<script>alert('创建成功！')</script>";
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($storybook);
             $em->flush();
 
-            echo "<script>alert('创建成功！')</script>";
-            return $this->redirectToRoute("/admin/");
+            return $this->redirectToRoute("new_storybook");
         }
         return $this->render('ProposalWebBundle:Default:admin/new_storybook.html.twig',array('button_name'=>'storybook','form'=>$form->createView()));
     }
 
     /**
-     * @Route("/new_confirm")
+     * @Route("/new_confirm",name="new_confirm")
      */
     public function confirm(Request $request){
         $confirm = new Confirm();
         $form = $this->createFormBuilder($confirm)
-            ->add('images','text')
-            ->add('submit','submit')
+            ->add('images','file')
             ->getForm();
 
         $form->handleRequest($request);
         $file = $form['images']->getData();
 
         if($form->isSubmitted()&&$form->isValid()) {
+            echo "<script>alert('创建成功！')</script>";
             $dir = dirname(__DIR__) . "\\" . "images";  //文件储存路径
-            $fileSavedName = $file->getClientOriginalName();  //上传后的文件名
+            $ext = $file->getClientOriginalExtension(); //获取文件后缀
+            //$fileSavedName = $file->getClientOriginalName();  //上传后的文件名
+            $fileSavedName = md5(mt_rand(77,777)).".".$ext;
             $file->move($dir, $fileSavedName);  //对上传的文件进行处理，从临时文件夹移动到定义的文件夹中以及命名文件
             $confirm->setImages($dir . "\\" . $fileSavedName);
+
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($confirm);
             $em->flush();
 
-            echo "<script>alert('创建成功！')</script>";
-            return $this->redirectToRoute("/admin/");
+            return $this->redirectToRoute("new_confirm");
         }
         return $this->render('ProposalWebBundle:Default:admin/new_confirm.html.twig',array('button_name'=>'confirm','form'=>$form->createView()));
     }
 
     /**
-     * @Route("/new_engagement")
+     * @Route("/new_engagement",name="new_engagement")
      */
     public function new_engagement(Request $request){
         $engagement = new Engagement();
         $form = $this->createFormBuilder($engagement)
             ->add('title','text')
-            ->add('content','textarea')
-            ->add('questions','textarea')
-            ->add('answers','textarea')
-            ->add('submit','submit')
+            ->add('content','textarea',array('attr'=>array('rows'=>10)))
+            ->add('questions','textarea',array('attr'=>array('rows'=>10)))
+            ->add('answers','textarea',array('attr'=>array('rows'=>10)))
             ->getForm();
         $form->handleRequest($request);
 
         if($form->isSubmitted()&&$form->isValid()){
+            echo "<script>alert('创建成功！')</script>";
             $em = $this->getDoctrine()->getManager();
             $em->persist($engagement);
             $em->flush();
 
-            echo "<script>alert('创建成功！')</script>";
-            return $this->redirectToRoute("/admin/");
+            return $this->redirectToRoute("new_engagement");
         }
         return $this->render('ProposalWebBundle:Default:admin/new_engagement.html.twig',array('button_name'=>'engagement','form'=>$form->createView()));
 
