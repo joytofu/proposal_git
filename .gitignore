@@ -12,3 +12,5 @@ app/cache/*
 /web/bundles/
 *.log
 app/logs/dev.log
+app/logs/dev.log
+app/logs/dev.log
