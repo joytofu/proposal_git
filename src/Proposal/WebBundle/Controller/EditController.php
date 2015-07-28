@@ -94,28 +94,29 @@ class EditController extends Controller {
     }
 
     /**
-     * @Route("/delete/proposal1/{id}", name="admin_delete")
+     * @Route("/delete/{entity}/{id}", name="admin_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, Proposal1 $proposal1)
+    public function deleteAction(Request $request, $entity_object)
     {
-        $form = $this->createDeleteForm($proposal1);
+        $form = $this->createDeleteForm($entity_object);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
-            $em->remove($proposal1);
+            $em->remove($entity_object);
             $em->flush();
         }
 
         return $this->redirectToRoute('admin_index');
     }
 
-    private function createDeleteForm(Proposal1 $proposal1)
+    private function createDeleteForm($entity_object)
     {
+        $obj_str = serialize($entity_object);
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_delete', array('id' => $proposal1->getId())))
+            ->setAction($this->generateUrl('admin_delete', array('id' => $entity_object->getId(),'entity'=>$obj_str)))
             ->setMethod('DELETE')
             ->getForm();
     }

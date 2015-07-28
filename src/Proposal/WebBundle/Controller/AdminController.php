@@ -161,7 +161,7 @@ class AdminController extends Controller{
             return $this->redirectToRoute("new_engagement");
         }
         return $this->render('ProposalWebBundle:Default:admin/new_engagement.html.twig',array('button_name'=>'engagement','form'=>$form->createView()));
-
     }
+
 
 }
