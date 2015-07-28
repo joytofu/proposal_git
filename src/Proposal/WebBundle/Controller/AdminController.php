@@ -4,8 +4,7 @@ namespace Proposal\WebBundle\Controller;
 
 use Proposal\WebBundle\Entity\Confirm;
 use Proposal\WebBundle\Entity\Engagement;
-use Proposal\WebBundle\Entity\Proposal;
-use Proposal\WebBundle\Entity\Category;
+use Proposal\WebBundle\Entity\Proposal1;
 use Proposal\WebBundle\Entity\Proposal2;
 use Proposal\WebBundle\Entity\Storybook;
 use Proposal\WebBundle\Form\ConfirmType;

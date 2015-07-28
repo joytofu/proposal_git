@@ -1,5 +1,5 @@
 {% extends 'ProposalWebBundle:Default:admin/base_admin.html.twig' %}
-{% block title %}new_proposal{% endblock %}
+{% block head_title %}new_proposal{% endblock %}
 {% block main_form %}
     <h1 style="text-align: center">Proposal1</h1>
     {% form_theme form 'bootstrap_3_layout.html.twig' %}
@@ -23,4 +23,6 @@
         </div>
     </div>
     {{ form_end(form) }}
+    {% block delete_button %}
+    {% endblock %}
 {% endblock %}

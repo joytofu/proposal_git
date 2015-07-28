@@ -1,0 +1,8 @@
+{% extends 'ProposalWebBundle:Default:admin/new_proposal1.html.twig' %}
+{% block head_title %}edit proposal1{% endblock %}
+{% block delete_button %}
+    {{ form_start(deleteForm) }}
+    {{ form_widget(deleteForm) }}
+    <button class="button red" type="submit"><div class="shine"></div>DELETE {{ button_name }}</button>
+    {{ form_end(deleteForm) }}
+{% endblock %}

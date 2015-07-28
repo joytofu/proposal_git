@@ -10,8 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bridge\Doctrine;
 use Proposal\WebBundle\Entity\Confirm;
 use Proposal\WebBundle\Entity\Engagement;
-use Proposal\WebBundle\Entity\Proposal;
-use Proposal\WebBundle\Entity\Category;
+use Proposal\WebBundle\Entity\Proposal1;
 use Proposal\WebBundle\Entity\Proposal2;
 use Proposal\WebBundle\Entity\Storybook;
 use Proposal\WebBundle\Form\ConfirmType;
@@ -20,28 +19,38 @@ use Proposal\WebBundle\Form\Proposal1Type;
 use Proposal\WebBundle\Form\Proposal2Type;
 use Proposal\WebBundle\Form\StorybookType;
 
+/**
+ * @Route("/admin")
+ */
 class EditController extends Controller {
 
     /**
      * @Route("/edit/proposal1/{id}", requirements={"id" = "\d+"}, name="editProposal1")
      * @Method({"GET","POST"})
      */
-    public function editProposal1(Proposal1 $proposal1, Request $request,$id)
+    public function editProposal1(Proposal1 $proposal1, Request $request)
     {
         //首先获取需要显示在编辑框的内容
         $em = $this->getDoctrine()->getManager();
-        $data = $em->getRepository('ProposalWebBundle:Proposal1')->find($id);
 
-        //输出编辑框表格（显示的内容传到模板中进行渲染）
+        //创建编辑框表格（显示的内容传到模板中进行渲染）
         $editForm = $this->createForm(new Proposal1Type(),$proposal1);
-        $deleteForm = $this->createDeleteForm()
+        $deleteForm = $this->createDeleteForm($proposal1);
+
+        $editForm->handleRequest($request);
+
+        if($editForm->isSubmitted()&&$editForm->isValid())
+        {
+            $em->flush();
+            return $this->redirectToRoute('admin_index');
+        }
 
 
-        //update数据库中数据
-        $data->setTitle()->setContent();
-        $em->flush();
-
-        return $this->render('ProposalWebBundle:Default:admin/edit/editProposal1.html.twig',array('data'=>$data));
+        return $this->render('ProposalWebBundle:Default:admin/edit/editProposal1.html.twig',array(
+            'proposal1'=>$proposal1,
+            'form'=>$editForm->createView(),
+            'deleteForm'=>$deleteForm->createView(),
+            'button_name'=>'proposal1'));
     }
 
 
@@ -82,5 +91,32 @@ class EditController extends Controller {
     public function editEngagement(Engagement $engagement, Request $request)
     {
 
+    }
+
+    /**
+     * @Route("/delete/proposal1/{id}", name="admin_delete")
+     * @Method("DELETE")
+     */
+    public function deleteAction(Request $request, Proposal1 $proposal1)
+    {
+        $form = $this->createDeleteForm($proposal1);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+
+            $em->remove($proposal1);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('admin_index');
+    }
+
+    private function createDeleteForm(Proposal1 $proposal1)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('admin_delete', array('id' => $proposal1->getId())))
+            ->setMethod('DELETE')
+            ->getForm();
     }
 }

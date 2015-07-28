@@ -6,7 +6,7 @@
     <div class="fix_block">
         <div class="show_block">
             {% for value in data1 %}
-                <li>{{ value.title }}</li>
+                <li><a href="{{ path('editProposal1',{id:value.id}) }}" target="_blank">{{ value.title }}</a></li>
             {% endfor %}
         </div>
         <div class="button-middle" style="font-size: 18px !important;">
@@ -18,7 +18,7 @@
     <div class="fix_block">
         <div class="show_block">
                 {% for value in data2 %}
-                    <li>{{ value.question }}</li>
+                    <li><a href="{{ path('editProposal2',{id:value.id}) }}" target="_blank">{{ value.question }}</a></li>
                 {% endfor %}
         </div>
         <div class="button-middle" style="font-size: 18px !important;">
@@ -30,7 +30,7 @@
     <div class="fix_block">
         <div class="show_block">
             {% for value in data3 %}
-                <li>{{ value.title }}</li>
+                <li><a href="{{ path('editStorybook',{id:value.id}) }}" target="_blank">{{ value.title }}</a></li>
             {% endfor %}
         </div>
         <div class="button-middle" style="font-size: 18px !important;">
@@ -42,7 +42,7 @@
     <div class="fix_block">
         <div class="show_block">
             {% for value in data4 %}
-                <li>{{ value.images }}</li>
+                <li><a href="{{ path('editConfirm',{id:value.id}) }}" target="_blank">{{ value.images }}</a></li>
             {% endfor %}
         </div>
         <div class="button-middle" style="font-size: 18px !important;">
@@ -54,7 +54,7 @@
     <div class="fix_block">
         <div class="show_block">
             {% for value in data5 %}
-                <li>{{ value.title }}</li>
+                <li><a href="{{ path('editEngagement',{id:value.id}) }}" target="_blank">{{ value.title }}</a></li>
             {% endfor %}
         </div>
         <div class="button-middle" style="font-size: 18px !important;">
