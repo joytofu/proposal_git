@@ -22,7 +22,18 @@ class Confirm {
     /**
      * @ORM\Column(type="string")
      */
+    protected $title;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    protected $content;
+
+    /**
+     * @ORM\Column(type="string")
+     */
     protected $images;
+
 
     /**
      * Get id

@@ -94,4 +94,27 @@ class Storybook
     {
         return $this->content;
     }
+
+    /**
+     * Set images
+     *
+     * @param string $images
+     * @return Storybook
+     */
+    public function setImages($images)
+    {
+        $this->images = $images;
+    
+        return $this;
+    }
+
+    /**
+     * Get images
+     *
+     * @return string 
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
 }

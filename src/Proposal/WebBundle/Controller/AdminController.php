@@ -8,7 +8,11 @@ use Proposal\WebBundle\Entity\Proposal;
 use Proposal\WebBundle\Entity\Category;
 use Proposal\WebBundle\Entity\Proposal2;
 use Proposal\WebBundle\Entity\Storybook;
+use Proposal\WebBundle\Form\ConfirmType;
+use Proposal\WebBundle\Form\EngagementType;
 use Proposal\WebBundle\Form\Proposal1Type;
+use Proposal\WebBundle\Form\Proposal2Type;
+use Proposal\WebBundle\Form\StorybookType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -30,7 +34,7 @@ class AdminController extends Controller{
     public function admin_index()
     {
 
-        $data1 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Proposal')->findAll();
+        $data1 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Proposal1')->findAll();
         $data2 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Proposal2')->findAll();
         $data3 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Storybook')->findAll();
         $data4 = $this->getDoctrine()->getManager()->getRepository('ProposalWebBundle:Confirm')->findAll();
@@ -45,24 +49,24 @@ class AdminController extends Controller{
     }
 
     /**
-     * @Route("/new_proposal",name="new_proposal")
+     * @Route("/new_proposal1",name="new_proposal1")
      */
-    public function new_proposal(Request $request)
+    public function new_proposal1(Request $request)
     {
 
-        $proposal = new Proposal();
-        $form = $this->createForm(new Proposal1Type(),$proposal);
+        $proposal1 = new Proposal1();
+        $form = $this->createForm(new Proposal1Type(),$proposal1);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
             echo "<script>alert('创建成功!')</script>";
             $em = $this->getDoctrine()->getManager();
-            $em->persist($proposal);
+            $em->persist($proposal1);
             $em->flush();
-            return $this->redirectToRoute('new_proposal');
+            return $this->redirectToRoute('new_proposal1');
         }
-            return $this->render('ProposalWebBundle:Default:admin/new_proposal.html.twig',array('button_name'=>'proposal','form'=>$form->createView()));
+            return $this->render('ProposalWebBundle:Default:admin/new_proposal1.html.twig',array('button_name'=>'proposal1','form'=>$form->createView()));
         }
 
     /**
@@ -71,14 +75,7 @@ class AdminController extends Controller{
     public function new_proposal2(Request $request)
     {
         $proposal2 = new Proposal2();
-        $form = $this->createFormBuilder($proposal2)
-            ->add('question','textarea',array('attr'=>array('rows'=>5)))
-            ->add('option1','text')
-            ->add('option2','text')
-            ->add('option3','text')
-            ->add('option4','text')
-            ->add('option5','text')
-            ->getForm();
+        $form = $this->createForm(new Proposal2Type(),$proposal2);
 
         $form->handleRequest($request);
         if($form->isSubmitted()&&$form->isValid()){
@@ -96,11 +93,7 @@ class AdminController extends Controller{
      */
     public function new_storybook(Request $request){
         $storybook = new Storybook();
-        $form = $this->createFormBuilder($storybook)
-            ->add('title','text')
-            ->add('content','textarea',array('attr'=>array('rows'=>10)))
-            ->add('images','file',array('label'=>'插图'))
-            ->getForm();
+        $form = $this->createForm(new StorybookType(),$storybook);
 
         $form->handleRequest($request);
         $file = $form['images']->getData();
@@ -128,9 +121,7 @@ class AdminController extends Controller{
      */
     public function confirm(Request $request){
         $confirm = new Confirm();
-        $form = $this->createFormBuilder($confirm)
-            ->add('images','file')
-            ->getForm();
+        $form = $this->createForm(new ConfirmType(),$confirm);
 
         $form->handleRequest($request);
         $file = $form['images']->getData();
@@ -159,12 +150,7 @@ class AdminController extends Controller{
      */
     public function new_engagement(Request $request){
         $engagement = new Engagement();
-        $form = $this->createFormBuilder($engagement)
-            ->add('title','text')
-            ->add('content','textarea',array('attr'=>array('rows'=>10)))
-            ->add('questions','textarea',array('attr'=>array('rows'=>10)))
-            ->add('answers','textarea',array('attr'=>array('rows'=>10)))
-            ->getForm();
+        $form = $this->createForm(new EngagementType(),$engagement);
         $form->handleRequest($request);
 
         if($form->isSubmitted()&&$form->isValid()){
