@@ -163,5 +163,15 @@ class AdminController extends Controller{
         return $this->render('ProposalWebBundle:Default:admin/new_engagement.html.twig',array('button_name'=>'engagement','form'=>$form->createView()));
     }
 
+    /**
+     * @Route("/test_entity")
+     */
+    public function test_entity()
+    {
+        $entity_obj = new Proposal1();
+        $obj_str = get_class($entity_obj);
+        $obj_str = str_replace('Proposal\WebBundle\Entity','',$obj_str);
+        echo $obj_str;
+    }
 
 }

@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bridge\Doctrine;
 use Proposal\WebBundle\Entity\Confirm;
 use Proposal\WebBundle\Entity\Engagement;
@@ -18,6 +19,7 @@ use Proposal\WebBundle\Form\EngagementType;
 use Proposal\WebBundle\Form\Proposal1Type;
 use Proposal\WebBundle\Form\Proposal2Type;
 use Proposal\WebBundle\Form\StorybookType;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @Route("/admin")
@@ -30,6 +32,7 @@ class EditController extends Controller {
      */
     public function editProposal1(Proposal1 $proposal1, Request $request)
     {
+
         //首先获取需要显示在编辑框的内容
         $em = $this->getDoctrine()->getManager();
 
@@ -42,7 +45,7 @@ class EditController extends Controller {
         if($editForm->isSubmitted()&&$editForm->isValid())
         {
             $em->flush();
-            return $this->redirectToRoute('admin_index');
+            return $this->redirectToRoute('admin_editProposal1',array('id'=>$proposal1->getId()));
         }
 
 
@@ -97,24 +100,48 @@ class EditController extends Controller {
      * @Route("/delete/{entity}/{id}", name="admin_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, $entity_object)
+    public function deleteAction(Request $request, Proposal1 $proposal1)
     {
-        $form = $this->createDeleteForm($entity_object);
-        $form->handleRequest($request);
+       /* switch($entity){
+            case 'Proposal1':
+                $entity_obj = new Proposal1();
+            break;
+            case 'Proposal2':
+                $entity_obj = new Proposal2();
+            break;
+            case 'Storybook':
+                $entity_obj = new Storybook();
+            break;
+            case 'Confirm':
+                $entity_obj = new Confirm();
+            break;
+            case 'Engagement':
+                $entity_obj = new Engagement();
+            break;
+        }*/
+
+          $form = $this->createDeleteForm($proposal1);
+          $form->handleRequest($request);
+
+        if($form->isSubmitted()){
+            echo "<script>confirm('确定删除吗?')</script>";
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
-            $em->remove($entity_object);
+            $em->remove($proposal1);
             $em->flush();
         }
 
-        return $this->redirectToRoute('admin_index');
+         return $this->redirectToRoute('admin_index');
+
     }
 
     private function createDeleteForm($entity_object)
     {
-        $obj_str = serialize($entity_object);
+
+        $obj_str = get_class($entity_object);
+        $obj_str = str_replace('Proposal\WebBundle\Entity\\','',$obj_str);
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('admin_delete', array('id' => $entity_object->getId(),'entity'=>$obj_str)))
             ->setMethod('DELETE')
