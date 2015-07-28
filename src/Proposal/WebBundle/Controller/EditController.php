@@ -100,9 +100,9 @@ class EditController extends Controller {
      * @Route("/delete/{entity}/{id}", name="admin_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, Proposal1 $proposal1)
+    public function deleteAction($entity)
     {
-       /* switch($entity){
+        switch($entity){
             case 'Proposal1':
                 $entity_obj = new Proposal1();
             break;
@@ -118,20 +118,25 @@ class EditController extends Controller {
             case 'Engagement':
                 $entity_obj = new Engagement();
             break;
-        }*/
-
-          $form = $this->createDeleteForm($proposal1);
-          $form->handleRequest($request);
-
-        if($form->isSubmitted()){
-            echo "<script>confirm('确定删除吗?')</script>";
         }
+        print_r($entity);
+        echo "<br>";
+        print_r($entity_obj);
+        exit;
 
-        if ($form->isSubmitted() && $form->isValid()) {
+          /*$form = $this->createDeleteForm($proposal1);
+          $form->handleRequest($request);*/
+
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($entity_obj);
+        $em->flush();
+
+        /*if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($proposal1);
             $em->flush();
-        }
+        }*/
 
          return $this->redirectToRoute('admin_index');
 
