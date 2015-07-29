@@ -1,0 +1,71 @@
+{% extends 'ProposalWebBundle:Default:admin/base_admin.html.twig' %}
+
+{#判断deleteForm是否定义来改head_title#}
+{% if deleteForm is not defined %}
+    {% set head_title = 'new_proposal2' %}
+{% else %}
+    {% set head_title = 'edit_proposal2' %}
+{% endif %}
+    {% block head_title %}{{ head_title }}{% endblock %}
+
+{% block main_form %}
+    <h1 style="text-align: center">Proposal2</h1>
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+    {{ form_start(form) }}
+    <div id="post">
+
+        <div class="form-group">
+            {{ form_label(form.question)}}
+            {{ form_errors(form.question) }}
+            {{ form_widget(form.question)}}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.option1)}}
+            {{ form_errors(form.option1) }}
+            {{ form_widget(form.option1)}}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.option2)}}
+            {{ form_errors(form.option2) }}
+            {{ form_widget(form.option2)}}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.option3)}}
+            {{ form_errors(form.option3) }}
+            {{ form_widget(form.option3)}}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.option4)}}
+            {{ form_errors(form.option4) }}
+            {{ form_widget(form.option4)}}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.option5)}}
+            {{ form_errors(form.option5) }}
+            {{ form_widget(form.option5)}}
+        </div>
+
+        <div class="button-middle">
+            <button class="button blue" type="submit"><div class="shine"></div>post {{ button_name }}</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+    {#判断deleteForm是否定义来设置删除按钮#}
+    {% if deleteForm is defined %}
+        {% block delete_button %}
+            {{ form_start(deleteForm) }}
+            {{ form_widget(deleteForm) }}
+            <div class="button-middle">
+                <button class="button red" type="submit"><div class="shine"></div>DELETE {{ button_name }}</button>
+            </div>
+            {{ form_end(deleteForm) }}
+        {% endblock %}
+    {% endif %}
+
+{% endblock %}

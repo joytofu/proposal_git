@@ -1,0 +1,23 @@
+{% if proposal1 %}
+    {% set entity='ProposalWebBundle:Default:admin/new_proposal1.html.twig' %}
+{% elseif proposal2 %}
+    {% set entity='ProposalWebBundle:Default:admin/new_proposal2.html.twig' %}
+{% elseif storybook %}
+    {% set entity='ProposalWebBundle:Default:admin/new_storybook.html.twig' %}
+{% elseif confirm %}
+    {% set entity='ProposalWebBundle:Default:admin/new_confirm.html.twig' %}
+{% else %}
+    {% set entity='ProposalWebBundle:Default:admin/new_engagement.html.twig' %}
+{% endif %}
+{% extends entity %}
+
+
+{% block head_title %}edit {{ button_name }}{% endblock %}
+{% block delete_button %}
+    {{ form_start(deleteForm) }}
+    {{ form_widget(deleteForm) }}
+    <div class="button-middle">
+    <button class="button red" type="submit"><div class="shine"></div>DELETE {{ button_name }}</button>
+    </div>
+    {{ form_end(deleteForm) }}
+{% endblock %}

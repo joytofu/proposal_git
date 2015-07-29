@@ -1,0 +1,49 @@
+{% extends 'ProposalWebBundle:Default:admin/base_admin.html.twig' %}
+
+{#判断deleteForm是否定义来改head_title#}
+{% if deleteForm is not defined %}
+    {% set head_title = 'new proposal1' %}
+{% else %}
+    {% set head_title = 'edit proposal1' %}
+{% endif %}
+    {% block head_title %}{{ head_title }}{% endblock %}
+
+
+{% block main_form %}
+    <h1 style="text-align: center">Proposal1</h1>
+    {% form_theme form 'bootstrap_3_layout.html.twig' %}
+    {{ form_start(form) }}
+    <div id="post">
+
+        <div class="form-group">
+            {{ form_label(form.title)}}
+            {{ form_errors(form.title) }}
+            {{ form_widget(form.title)}}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.content)}}
+            {{ form_errors(form.content) }}
+            {{ form_widget(form.content)}}
+        </div>
+
+        <div class="button-middle">
+            <button class="button blue" type="submit"><div class="shine"></div>post {{ button_name }}</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+    {#判断deleteForm是否定义来设置删除按钮#}
+    {% if deleteForm is defined %}
+    {% block delete_button %}
+        {{ form_start(deleteForm) }}
+        {{ form_widget(deleteForm) }}
+        <div class="button-middle">
+            <button class="button red" type="submit"><div class="shine"></div>DELETE {{ button_name }}</button>
+        </div>
+        {{ form_end(deleteForm) }}
+    {% endblock %}
+    {% endif %}
+
+
+{% endblock %}

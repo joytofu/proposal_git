@@ -65,7 +65,7 @@ class AdminController extends Controller{
             $em->flush();
             return $this->redirectToRoute('new_proposal1');
         }
-            return $this->render('ProposalWebBundle:Default:admin/new_proposal1.html.twig',array('button_name'=>'proposal1','form'=>$form->createView()));
+            return $this->render('ProposalWebBundle:Default:admin/proposal1.html.twig',array('button_name'=>'proposal1','form'=>$form->createView()));
         }
 
     /**
@@ -84,7 +84,7 @@ class AdminController extends Controller{
             $em->flush();
             return $this->redirectToRoute("new_proposal2");
         }
-        return $this->render('ProposalWebBundle:Default:admin/new_proposal2.html.twig',array('button_name'=>'proposal2','form'=>$form->createView()));
+        return $this->render('ProposalWebBundle:Default:admin/proposal2.html.twig',array('button_name'=>'proposal2','form'=>$form->createView()));
     }
 
     /**
@@ -95,24 +95,26 @@ class AdminController extends Controller{
         $form = $this->createForm(new StorybookType(),$storybook);
 
         $form->handleRequest($request);
-        $file = $form['images']->getData();
+        $file = $form['file']->getData();
 
         if($form->isSubmitted()&&$form->isValid()){
-            $dir = dirname(__DIR__)."\\"."images";  //文件储存路径
+            /*$dir = dirname(__DIR__)."\\"."images";  //文件储存路径
             $ext = $file->getClientOriginalExtension(); //获取文件后缀
             //$fileSavedName = $file->getClientOriginalName();  //上传后的文件名
             $fileSavedName = md5(mt_rand(77,777)).".".$ext; //上传后的文件名
             $file->move($dir,$fileSavedName);  //对上传的文件进行处理，从临时文件夹移动到定义的文件夹中以及命名文件
-            $storybook->setImages($dir."\\".$fileSavedName);
-            echo "<script>alert('创建成功！')</script>";
+            $storybook->setFile($dir."\\".$fileSavedName);
+            $storybook->setPath($storybook->getWebPath());
+            echo "<script>alert('创建成功！')</script>";*/
 
             $em = $this->getDoctrine()->getManager();
+
             $em->persist($storybook);
             $em->flush();
 
             return $this->redirectToRoute("new_storybook");
         }
-        return $this->render('ProposalWebBundle:Default:admin/new_storybook.html.twig',array('button_name'=>'storybook','form'=>$form->createView()));
+        return $this->render('ProposalWebBundle:Default:admin/storybook.html.twig',array('button_name'=>'storybook','form'=>$form->createView()));
     }
 
     /**
@@ -141,7 +143,7 @@ class AdminController extends Controller{
 
             return $this->redirectToRoute("new_confirm");
         }
-        return $this->render('ProposalWebBundle:Default:admin/new_confirm.html.twig',array('button_name'=>'confirm','form'=>$form->createView()));
+        return $this->render('ProposalWebBundle:Default:admin/confirm.html.twig',array('button_name'=>'confirm','form'=>$form->createView()));
     }
 
     /**
@@ -160,7 +162,7 @@ class AdminController extends Controller{
 
             return $this->redirectToRoute("new_engagement");
         }
-        return $this->render('ProposalWebBundle:Default:admin/new_engagement.html.twig',array('button_name'=>'engagement','form'=>$form->createView()));
+        return $this->render('ProposalWebBundle:Default:admin/engagement.html.twig',array('button_name'=>'engagement','form'=>$form->createView()));
     }
 
     /**
@@ -170,7 +172,7 @@ class AdminController extends Controller{
     {
         $entity_obj = new Proposal1();
         $obj_str = get_class($entity_obj);
-        $obj_str = str_replace('Proposal\WebBundle\Entity','',$obj_str);
+        $obj_str = str_replace('Proposal\WebBundle\Entity\\','',$obj_str);
         echo $obj_str;
     }
 
