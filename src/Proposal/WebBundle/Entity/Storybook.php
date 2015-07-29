@@ -46,26 +46,30 @@ class Storybook
      */
     private $path;
 
-    private $temp;
 
     public function getAbsolutePath()
     {
         return null === $this->path
             ? null
-            : $this->getUploadRootDir().'/'.$this->path;
+            : $this->getUploadRootDir()."\\".$this->file;
     }
+
     public function getWebPath()
     {
         return null === $this->file
             ? null
-            : $this->getUploadDir().'/'.$this->file;
+            : $this->getUploadDir().'\\'.$this->file;
     }
+
+
     protected function getUploadRootDir()
     {
 // the absolute directory path where uploaded
 // documents should be saved
         return dirname(__DIR__).$this->getUploadDir();
     }
+
+
     protected function getUploadDir()
     {
 // get rid of the __DIR__ so it doesn't screw up
@@ -130,26 +134,6 @@ class Storybook
     }
 
 
-    /**
-     * Set file
-     *
-     * @param string $file
-     * @return Storybook
-     */
-    public function setFile(UploadedFile $file = null)
-    {
-        $this->file = $file;
-// check if we have an old image path
-        if (isset($this->path)) {
-// store the old name to delete after the update
-            $this->temp = $this->path;
-            $this->path = null;
-        } else {
-            $this->path = 'initial';
-        }
-
-        return $this;
-    }
 
     /**
      * Get file
@@ -184,53 +168,36 @@ class Storybook
         return $this->path;
     }
 
-
-    /**
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     */
-    public function preUpload()
+    /*public function upload()
     {
-        if (null !== $this->getFile()) {
-// do whatever you want to generate a unique name
-            $filename = sha1(uniqid(mt_rand(), true));
-            //$filename = $this->getFile()->getClientOriginalName();
-            $this->path = $this->getUploadRootDir()."\\".$filename.".".$this->getFile()->getClientOriginalExtension();
-        }
-    }
-
-    /**
-     * @ORM\PostPersist()
-     * @ORM\PostUpdate()
-     */
-    public function upload()
-    {
+// the file property can be empty if the field is not required
         if (null === $this->getFile()) {
             return;
         }
-// if there is an error when moving the file, an exception will
-// be automatically thrown by move(). This will properly prevent
-// the entity from being persisted to the database on error
-        $this->getFile()->move($this->getUploadRootDir(), $this->path);
-// check if we have an old image
-        if (isset($this->temp)) {
-// delete the old image
-            unlink($this->getUploadRootDir().'/'.$this->temp);
-// clear the temp image path
-            $this->temp = null;
-        }
+// use the original file name here but you should
+// sanitize it at least to avoid any security issues
+// move takes the target directory and then the
+// target filename to move to
+        $this->getFile()->move(
+            $this->getUploadRootDir(),
+            $this->getFile()->getClientOriginalName()
+        );
+// set the path property to the filename where you've saved the file
+        $this->path = $this->getFile()->getClientOriginalName();
+// clean up the file property as you won't need it anymore
         $this->file = null;
-    }
-
+    }*/
 
     /**
-     * @ORM\PostRemove()
+     * Set file
+     *
+     * @param string $file
+     * @return Storybook
      */
-    public function removeUpload()
+    public function setFile($file)
     {
-        $file = $this->getAbsolutePath();
-        if ($file) {
-            unlink($file);
-        }
+        $this->file = $file;
+    
+        return $this;
     }
 }

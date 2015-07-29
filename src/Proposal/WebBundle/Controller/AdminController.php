@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints\EqualTo;
 use Symfony\Bridge\Doctrine;
+use Symfony\Component\Filesystem\Filesystem;
 
 
 /**
@@ -98,14 +99,14 @@ class AdminController extends Controller{
         $file = $form['file']->getData();
 
         if($form->isSubmitted()&&$form->isValid()){
-            /*$dir = dirname(__DIR__)."\\"."images";  //文件储存路径
+            $dir = dirname(__DIR__)."\\"."images";  //文件储存路径
             $ext = $file->getClientOriginalExtension(); //获取文件后缀
-            //$fileSavedName = $file->getClientOriginalName();  //上传后的文件名
-            $fileSavedName = md5(mt_rand(77,777)).".".$ext; //上传后的文件名
+            $fileSavedName = $file->getClientOriginalName();  //上传后的文件名
+            //$fileSavedName = md5(mt_rand(77,777)).".".$ext; //上传后的文件名
             $file->move($dir,$fileSavedName);  //对上传的文件进行处理，从临时文件夹移动到定义的文件夹中以及命名文件
-            $storybook->setFile($dir."\\".$fileSavedName);
+            $storybook->setFile($fileSavedName);
             $storybook->setPath($storybook->getWebPath());
-            echo "<script>alert('创建成功！')</script>";*/
+            echo "<script>alert('创建成功！')</script>";
 
             $em = $this->getDoctrine()->getManager();
 
@@ -120,7 +121,7 @@ class AdminController extends Controller{
     /**
      * @Route("/new_confirm",name="new_confirm")
      */
-    public function confirm(Request $request){
+    public function new_confirm(Request $request){
         $confirm = new Confirm();
         $form = $this->createForm(new ConfirmType(),$confirm);
 
@@ -170,10 +171,10 @@ class AdminController extends Controller{
      */
     public function test_entity()
     {
-        $entity_obj = new Proposal1();
-        $obj_str = get_class($entity_obj);
-        $obj_str = str_replace('Proposal\WebBundle\Entity\\','',$obj_str);
-        echo $obj_str;
+        $fs = new Filesystem();
+       $fs->exists('31b7c4155847858b5f135f94bc133999bf7c37c4.jpg');
+        print_r($fs);
+        return new Response();
     }
 
 }

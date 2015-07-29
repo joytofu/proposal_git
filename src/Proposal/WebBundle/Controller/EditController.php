@@ -94,7 +94,8 @@ class EditController extends Controller {
      */
     public function editStorybook(Storybook $storybook, Request $request)
     {
-        $file_obj = new UploadedFile($storybook->getFile(),$storybook->getWebPath());
+
+        //$file_obj = new UploadedFile($storybook->getFile(),$storybook->getWebPath());
 
         $em = $this->getDoctrine()->getManager();
 
@@ -103,7 +104,9 @@ class EditController extends Controller {
             ->add('title','text')
             ->add('content','textarea',array('attr'=>array('rows'=>20)))
             ->add('file','file',array(
-                'label'=>'插图'
+                'label'=>'插图',
+                'data_class'=>null
+                //'image_path'=>'webPath'
                 ))
             ->getForm();
 
@@ -113,8 +116,9 @@ class EditController extends Controller {
 
         if($editForm->isSubmitted()&&$editForm->isValid())
         {
+            $storybook->setFile($storybook->getPath());
             $em->flush();
-            return $this->redirectToRoute('admin_editStorybook',array('id'=>$storybook->getId()));
+            return $this->redirectToRoute('editStorybook',array('id'=>$storybook->getId()));
         }
 
 
@@ -143,7 +147,7 @@ class EditController extends Controller {
         if($editForm->isSubmitted()&&$editForm->isValid())
         {
             $em->flush();
-            return $this->redirectToRoute('admin_editConfirm',array('id'=>$confirm->getId()));
+            return $this->redirectToRoute('editConfirm',array('id'=>$confirm->getId()));
         }
 
 
@@ -171,7 +175,7 @@ class EditController extends Controller {
         if($editForm->isSubmitted()&&$editForm->isValid())
         {
             $em->flush();
-            return $this->redirectToRoute('admin_editEngagement',array('id'=>$engagement->getId()));
+            return $this->redirectToRoute('editEngagement',array('id'=>$engagement->getId()));
         }
 
 

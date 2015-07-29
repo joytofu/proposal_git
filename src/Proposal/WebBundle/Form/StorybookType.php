@@ -17,7 +17,8 @@ class StorybookType extends AbstractType {
             ->add('title','text')
             ->add('content','textarea',array('attr'=>array('rows'=>20)))
             ->add('file','file',array(
-                'label'=>'插图'
+                'label'=>'插图',
+                'data_class'=>null
                 ));
 
     }
