@@ -8,6 +8,7 @@ app/cache/*
 /app/phpunit.xml
 /bin/
 /composer.phar
+/vendor/
 /web/bundles/
 *.log
 app/logs/dev.log
