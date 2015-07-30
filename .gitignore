@@ -8,9 +8,9 @@ app/cache/*
 /app/phpunit.xml
 /bin/
 /composer.phar
-/vendor/
 /web/bundles/
 *.log
 app/logs/dev.log
 *.log
-!/vendor/vich/*
+/vendor/*
+!/vendor/vich/
