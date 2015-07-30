@@ -96,17 +96,8 @@ class AdminController extends Controller{
         $form = $this->createForm(new StorybookType(),$storybook);
 
         $form->handleRequest($request);
-        $file = $form['file']->getData();
 
         if($form->isSubmitted()&&$form->isValid()){
-            $dir = dirname(__DIR__)."\\"."images";  //文件储存路径
-            $ext = $file->getClientOriginalExtension(); //获取文件后缀
-            $fileSavedName = $file->getClientOriginalName();  //上传后的文件名
-            //$fileSavedName = md5(mt_rand(77,777)).".".$ext; //上传后的文件名
-            $file->move($dir,$fileSavedName);  //对上传的文件进行处理，从临时文件夹移动到定义的文件夹中以及命名文件
-            $storybook->setFile($fileSavedName);
-            $storybook->setPath($storybook->getWebPath());
-            echo "<script>alert('创建成功！')</script>";
 
             $em = $this->getDoctrine()->getManager();
 
@@ -171,10 +162,9 @@ class AdminController extends Controller{
      */
     public function test_entity()
     {
-        $fs = new Filesystem();
-       $fs->exists('31b7c4155847858b5f135f94bc133999bf7c37c4.jpg');
-        print_r($fs);
-        return new Response();
+
+        $content = 1;
+        return $this->render('ProposalWebBundle:Default:test.html.twig',array('c'=>$content));
     }
 
 }

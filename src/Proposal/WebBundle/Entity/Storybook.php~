@@ -5,13 +5,14 @@ namespace Proposal\WebBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bridge\Doctrine\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Storybook
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="Proposal\WebBundle\Entity\StorybookRepository")
- * @ORM\HasLifecycleCallbacks
+ * @Vich\Uploadable
  */
 class Storybook
 {
@@ -37,155 +38,48 @@ class Storybook
     private $content;
 
     /**
-     * @ORM\Column(type="string")
-     */
-    private $file;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $path;
-
-    private $temp;
-
-    public function getAbsolutePath()
-    {
-        return null === $this->path
-            ? null
-            : $this->getUploadRootDir().'/'.$this->path;
-    }
-
-    public function getWebPath()
-    {
-        return null === $this->file
-            ? null
-            : $this->getUploadDir().'/'.$this->file;
-    }
-
-
-    protected function getUploadRootDir()
-    {
-// the absolute directory path where uploaded
-// documents should be saved
-        return dirname(__DIR__).$this->getUploadDir();
-    }
-
-
-    protected function getUploadDir()
-    {
-// get rid of the __DIR__ so it doesn't screw up
-// when displaying uploaded doc/image in the view.
-        return '\images';
-    }
-
-    /**
-     * Get id
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @return integer 
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName")
+     *
+     * @var File $imageFile
      */
-    public function getId()
-    {
-        return $this->id;
-    }
+    protected $imageFile;
 
     /**
-     * Set title
+     * @ORM\Column(type="string", length=255, name="image_name")
      *
-     * @param string $title
-     * @return Storybook
+     * @var string $imageName
      */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    
-        return $this;
-    }
+    protected $imageName;
 
     /**
-     * Get title
+     * @ORM\Column(type="datetime")
      *
-     * @return string 
+     * @var \DateTime $updatedAt
      */
-    public function getTitle()
-    {
-        return $this->title;
-    }
+    protected $updatedAt;
 
     /**
-     * Set content
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
      *
-     * @param string $content
-     * @return Storybook
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      */
-    public function setContent($content)
+    public function setImageFile(File $image = null)
     {
-        $this->content = $content;
-    
-        return $this;
-    }
+        $this->imageFile = $image;
 
-    /**
-     * Get content
-     *
-     * @return string 
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-
-
-    /**
-     * Get file
-     *
-     * @return Uploaded file
-     */
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    /**
-     * Set path
-     *
-     * @param string $path
-     * @return Storybook
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-    
-        return $this;
-    }
-
-    /**
-     * Get path
-     *
-     * @return string 
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    public function upload()
-    {
-// the file property can be empty if the field is not required
-        if (null === $this->getFile()) {
-            return;
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTime('now');
         }
-// use the original file name here but you should
-// sanitize it at least to avoid any security issues
-// move takes the target directory and then the
-// target filename to move to
-        $this->getFile()->move(
-            $this->getUploadRootDir(),
-            $this->getFile()->getClientOriginalName()
-        );
-// set the path property to the filename where you've saved the file
-        $this->path = $this->getFile()->getClientOriginalName();
-// clean up the file property as you won't need it anymore
-        $this->file = null;
     }
+
+
+
 }

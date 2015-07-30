@@ -2,6 +2,7 @@
 
 namespace Proposal\WebBundle\Controller;
 
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -95,28 +96,20 @@ class EditController extends Controller {
     public function editStorybook(Storybook $storybook, Request $request)
     {
 
-        //$file_obj = new UploadedFile($storybook->getFile(),$storybook->getWebPath());
 
         $em = $this->getDoctrine()->getManager();
 
-        //$editForm = $this->createForm(new StorybookType(),$storybook);
-        $editForm = $this->createFormBuilder($storybook)
-            ->add('title','text')
-            ->add('content','textarea',array('attr'=>array('rows'=>20)))
-            ->add('file','file',array(
-                'label'=>'插图',
-                'data_class'=>null
-                //'image_path'=>'webPath'
-                ))
-            ->getForm();
+        $editForm = $this->createForm(new StorybookType(),$storybook);
+
 
         $deleteForm = $this->createDeleteForm($storybook);
 
         $editForm->handleRequest($request);
 
+
         if($editForm->isSubmitted()&&$editForm->isValid())
         {
-            $storybook->setFile($storybook->getPath());
+
             $em->flush();
             return $this->redirectToRoute('editStorybook',array('id'=>$storybook->getId()));
         }

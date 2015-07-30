@@ -9,6 +9,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\HttpFoundation\File\File;
+use Proposal\WebBundle\Form\Extension;
+
 
 class StorybookType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options){
@@ -16,10 +18,11 @@ class StorybookType extends AbstractType {
         $builder
             ->add('title','text')
             ->add('content','textarea',array('attr'=>array('rows'=>20)))
-            ->add('file','file',array(
+            ->add('imageFile','vich_image',array(
                 'label'=>'插图',
-                'data_class'=>null
+                'required'=>false,
                 ));
+
 
     }
 
