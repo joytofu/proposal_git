@@ -12,5 +12,8 @@ app/cache/*
 /web/bundles/
 *.log
 app/logs/dev.log
-app/logs/dev.log
-app/logs/dev.log
+*.log
+vendor/autoload.php
+vendor/composer/autoload_classmap.php
+!vendor/vich/uploder-bundle/Form/Type/VichFileType.php
+!vendor/vich/uploder-bundle/Resources/views/Form/fields.html.twig
