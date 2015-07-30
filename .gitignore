@@ -13,4 +13,4 @@ app/cache/*
 *.log
 app/logs/dev.log
 *.log
-!vendor/vich/*
+!/vendor/vich/*
