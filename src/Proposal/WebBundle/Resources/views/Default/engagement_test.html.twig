@@ -64,8 +64,9 @@
      <button name="cntwait" data-modal="modal-4"  class="button lightorange md-trigger"><div class="shine" style="top:-18px !important"></div>Can't wait</button>
 
   {#hidden content#}
+
      {% for content in data %}
-         {{ content.content }}
+         {{ content.content|raw }}
      {% endfor %}
 
  
