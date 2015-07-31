@@ -1,5 +1,0 @@
-# src/Acme/DemoBundle/Resources/config/vich_uploader/Storybook.yml
-Proposal\WebBundle\Entity\Storybook:
-    image:
-        mapping:           upload_image
-        filename_property: image_name

@@ -2,12 +2,15 @@
 
 namespace Proposal\WebBundle\Controller;
 
+use Proposal\WebBundle\Entity\Proposal1;
+use Proposal\WebBundle\Entity\Proposal2;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints\EqualTo;
+
 
 
 /**
@@ -21,18 +24,41 @@ class DefaultController extends Controller
      */
     public function proposal1()
     {
-        $title = array("参加《你最向往的欧洲旅游胜地》有奖调查活动，","你将有机会抽取欧洲十国双人豪华15天游（含机票和食宿）！");
-       return $this->render('ProposalWebBundle:Default:proposal.html.twig',array('title0' => $title[0],'title1'=>$title[1]));
+       $data =  $this->getDoctrine()->getRepository('ProposalWebBundle:Proposal1')->findOneBy(array('id'=>2));
+       $title = $data->getTitle();
+       $content = $data->getContent();
+       return $this->render('ProposalWebBundle:Default:proposal1.html.twig',array('title'=>$title,'content'=>$content));
     }
 
 
     /**
      * @Route("/proposal2")
      */
-    public function proposal2()
+    public function proposal2(Request $request)
     {
-        $content = "1";
-        return $this->render('ProposalWebBundle:Default:proposal2.html.twig',array('content'=>$content));
+        $proposal2 = new Proposal2();
+        //获取问题数据
+        $em = $this->getDoctrine()->getManager();
+        $data = $em->getRepository('ProposalWebBundle:Proposal2')->findAll();
+        $order = 1;
+
+        //最后问题表格
+        $favCityForm = $this->createFormBuilder($proposal2)
+            ->add('fav_city','textarea',array('attr'=>array('rows'=>5)))
+            ->getForm();
+
+        $favCityForm->handleRequest($request);
+        if($favCityForm->isSubmitted()&&$favCityForm->isValid()){
+            $form_data = $favCityForm->getData();
+            $form_data->setQuestion('最喜爱的欧洲城市');
+            $form_data->setFavCity($form_data->getFavCity());
+
+            $em->persist($form_data);
+            $em->flush();
+        }
+
+
+        return $this->render('ProposalWebBundle:Default:proposal2_test.html.twig',array('data'=>$data,'order'=>$order,'form'=>$favCityForm->createView()));
     }
 
 

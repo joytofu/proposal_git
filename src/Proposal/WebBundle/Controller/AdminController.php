@@ -117,17 +117,9 @@ class AdminController extends Controller{
         $form = $this->createForm(new ConfirmType(),$confirm);
 
         $form->handleRequest($request);
-        $file = $form['images']->getData();
+
 
         if($form->isSubmitted()&&$form->isValid()) {
-            echo "<script>alert('创建成功！')</script>";
-            $dir = dirname(__DIR__) . "\\" . "images";  //文件储存路径
-            $ext = $file->getClientOriginalExtension(); //获取文件后缀
-            //$fileSavedName = $file->getClientOriginalName();  //上传后的文件名
-            $fileSavedName = md5(mt_rand(77,777)).".".$ext;
-            $file->move($dir, $fileSavedName);  //对上传的文件进行处理，从临时文件夹移动到定义的文件夹中以及命名文件
-            $confirm->setImages($dir . "\\" . $fileSavedName);
-
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($confirm);

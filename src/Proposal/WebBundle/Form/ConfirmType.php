@@ -12,8 +12,8 @@ class ConfirmType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options){
         $builder
             ->add('title','text')
-            ->add('content','textarea')
-            ->add('images','file',array('label'=>'插图'));
+            ->add('content','textarea',array('attr'=>array('rows'=>8)))
+            ->add('imageFile','vich_image',array('label'=>'插图'));
     }
 
     public function configureOptions(OptionsResolver $resolver)

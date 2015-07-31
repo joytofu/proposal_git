@@ -228,15 +228,15 @@ class EditController extends Controller {
      *
      * 删除storybook中对应id对象
      */
-    public function deleteStorybook(Request $request, Proposal1 $proposal1)
+    public function deleteStorybook(Request $request, Storybook $storybook)
     {
-        $form = $this->createDeleteForm($proposal1);
+        $form = $this->createDeleteForm($storybook);
         $form->handleRequest($request);
 
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->remove($proposal1);
+            $em->remove($storybook);
             $em->flush();
         }
 

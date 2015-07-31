@@ -1,0 +1,182 @@
+{% extends 'ProposalWebBundle:Default:base.html.twig' %}
+
+{% block title %}
+<title>proposal_page_2</title>
+{% endblock %}
+
+{% block private_css %}
+    {% stylesheets '@ProposalWebBundle/Resources/public/css/proposal2/bootstrap.min.css' %}
+    <link rel="stylesheet" href="{{ asset_url }}"
+    {% endstylesheets %}
+{% endblock %}
+
+{% block private_js %}
+    {% javascripts
+    '@ProposalWebBundle/Resources/public/js/proposal2/jquery.min.js'
+    '@ProposalWebBundle/Resources/public/js/proposal2/collapse.js'
+    '@ProposalWebBundle/Resources/public/js/proposal2/transition.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+
+{% block main_content %}
+<div class="bg-1">
+<div class="container">
+  <div class="page-header">
+    <h1 style="color:#FFF;font-weight:700;">请回答以下问题↓</h1>
+  </div>
+
+  <div class="panel-group" id="accordion">
+
+      {% set i=1 %}
+      {% set j=2 %}
+      {% for QA in data %}
+    <div class="panel panel-default">
+      <div class="panel-heading" style="box-shadow: 1px 2px 7px;" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ i }}">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ 1 }}" style="color:#FFF;font-weight:700;">
+            问题{{ i }}:
+          </a>
+        </h4>
+      </div>
+        {% if i==1 %}
+        {% set collapse="panel-collapse collapse in" %}
+        {% else %}
+        {% set collapse="panel-collapse collapse" %}
+        {% endif %}
+      <div id="collapse{{ i }}" class="{{ collapse }}">
+       <div class="bg{{ j }}"> {% set j=j+1 %}
+       <div class="in_box" {% if i==3 %}style="padding-top:70px;padding-left:310px"{% endif %}>
+       <h2 style="color:white;font-size:40px;font-family:'黑体'">{{ QA.question }}</h2><br><br>
+
+        {% if i==3 %}<div style="padding-left:50px"><div style="color:#FFF500; font-size:24px">{% endif %}
+
+ <label class="radio">
+  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+  <p>{{ QA.option1 }}</p>
+</label><br>
+<label class="radio">
+  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+  <p>{{ QA.option2 }}</p>
+</label><br>
+<label class="radio">
+  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+  <p>{{ QA.option3 }}</p>
+</label><br>
+<label class="radio">
+  <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+ <p>{{ QA.option4 }}</p>
+</label><br>
+<label class="radio">
+  <input type="radio" name="optionsRadios" id="optionsRadios5" value="option5">
+ <p>{{ QA.option5 }}</p>
+</label>
+{% if i==3 %} </div>{% endif %}
+           {% set i=i+1 %}
+ <button class="button green q-z" data-toggle="collapse" data-parent="#accordion" href="#collapse{{ i }}" >下一题</button>
+{% if i==4 %} </div>{% endif %}
+</div>
+       </div>
+      </div>
+    </div>
+      {% endfor %}
+
+      <div class="panel panel-default">
+          <div class="panel-heading" style="box-shadow: 1px 2px 7px;" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+              <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" style="color:#FFF;font-weight:700;">
+                      问题3：
+                  </a>
+              </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+              <div class="bg4">
+                  <div class="in_box" style="font-size:25px">
+                      <h2 style="color:white;font-size:40px;font-family:'黑体'">你认为最佳的旅游月是？</h2><br><br>
+                      <font color="#FFFFFF">
+                          <label class="checkbox-inline">
+                              <input type="checkbox" id="inlineCheckbox1" value="option1">
+                              1月
+                          </label>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              2月
+                          </label>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              3月
+                          </label><br>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              4月
+                          </label>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              5月
+                          </label>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              6月
+                          </label><br>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              7月
+                          </label>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              8月
+                          </label>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              9月
+                          </label><br>
+                          <label class="checkbox-inline">
+                              <input type="checkbox">
+                              10月
+                          </label>
+                          <label class="checkbox-inline" style="margin-left:-3px">
+                              <input type="checkbox">
+                              11月
+                          </label>
+                          <label class="checkbox-inline" style="margin-left:-4px">
+                              <input type="checkbox">
+                              12月
+                          </label><br><br></font>
+                      <button class="button purple q-z" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" type="button">下一题</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+     <div class="panel panel-default">
+      <div class="panel-heading" style="box-shadow: 1px 2px 7px;" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" style="color:#FFF;font-weight:700;">
+            问题5：
+          </a>
+        </h4>
+      </div>
+      <div id="collapseFive" class="panel-collapse collapse">
+        <div class="bg6">
+        <div class="in_box" style="padding-top:15%">
+        <h2 style="color:white;font-size:40px;font-family:'黑体';">写下一个或数个你喜爱的欧洲城市（用空格隔开）</h2>
+        <br>
+        <br>
+        <div class="cities_area">
+
+        {{ form_start(form) }}
+            {{ form_label(form.fav_city)}}
+            {{ form_errors(form.fav_city) }}
+            {{ form_widget(form.fav_city)}}
+        <button class="button red q-z" style="margin-left:-0.4px" type="submit" name="sb">完成</button>
+        {{ form_end(form) }}
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+{% endblock %}

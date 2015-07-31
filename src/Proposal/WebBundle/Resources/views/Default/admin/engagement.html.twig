@@ -2,9 +2,9 @@
 
 {#判断deleteForm是否定义来改head_title#}
 {% if deleteForm is not defined %}
-    {% set head_title = 'new proposal1' %}
+    {% set head_title = 'new engagement' %}
 {% else %}
-    {% set head_title = 'edit proposal1' %}
+    {% set head_title = 'edit engagement' %}
 {% endif %}
     {% block head_title %}{{ head_title }}{% endblock %}
 
