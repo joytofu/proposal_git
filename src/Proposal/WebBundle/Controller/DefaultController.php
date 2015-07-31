@@ -126,6 +126,17 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $data = $em->getRepository('ProposalWebBundle:Engagement')->findAll();
+        $pwd_data = $em->getRepository('ProposalWebBundle:Engagement')->find('15');
+        $pwd= $pwd_data->getPwd();
+        print_r($pwd);
+        exit;
+
+        if($_POST){
+            $pwd[]=$_POST;
+            return $pwd;
+        }
+
+
 
         return $this->render('ProposalWebBundle:Default:engagement_test.html.twig',array('data'=>$data));
     }

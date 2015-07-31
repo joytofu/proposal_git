@@ -32,6 +32,13 @@ class Engagement {
 
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $pwd;
+
+
+
+    /**
      * Get id
      *
      * @return integer 
@@ -87,5 +94,5 @@ class Engagement {
         return $this->content;
     }
 
-
+    
 }

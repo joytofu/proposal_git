@@ -91,7 +91,7 @@
           $("#p2").bind("click", function () {
               $.ajax({
                       type: "POST",
-                      url: "check_pwd.php",
+                      url: "127.0.0.1:8000/engagement",
                       data: $("#pwd1").val(),
                       async:false,
                       success: function(data){

@@ -32,6 +32,13 @@ class Engagement {
 
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $pwd;
+
+
+
+    /**
      * Get id
      *
      * @return integer 
@@ -87,5 +94,28 @@ class Engagement {
         return $this->content;
     }
 
+    
 
+    /**
+     * Set pwd
+     *
+     * @param string $pwd
+     * @return Engagement
+     */
+    public function setPwd($pwd)
+    {
+        $this->pwd = $pwd;
+    
+        return $this;
+    }
+
+    /**
+     * Get pwd
+     *
+     * @return string 
+     */
+    public function getPwd()
+    {
+        return $this->pwd;
+    }
 }
