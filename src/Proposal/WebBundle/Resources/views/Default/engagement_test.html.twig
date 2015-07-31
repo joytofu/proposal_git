@@ -1,0 +1,246 @@
+{% extends 'ProposalWebBundle:Default:base.html.twig'%}
+
+{% block title %}
+  <title>engagement</title>
+{% endblock %}
+
+{% block global_css %}
+{% endblock %}
+
+{% block private_css %}
+<script type="text/javascript" src="{{asset('/bundles/proposalweb/js/engagement/jquery-2.1.4.min.js')}}"></script>
+{% stylesheets '@ProposalWebBundle/Resources/public/css/engagement/*'%}
+    <link rel="stylesheet" href="{{asset_url}}" type="text/css" />
+{% endstylesheets %}
+{% endblock %}
+
+{% block main_content %}
+  <div style="text-align:center;clear:both;">
+</div>
+  <div class="wrapper">
+    <div class="border-circle" id="one"></div>
+    <div class="border-circle" id="two"></div>
+    <div class="background-circle">
+      <div class="triangle-light"></div>
+      <div class="body"></div>
+      <span class="shirt-text">I</span>
+      <span class="shirt-text">♥</span>
+      <span class="shirt-text">屎</span>
+      <span class="shirt-text">猪</span>
+      <div class="triangle-dark"></div>
+    </div>
+    <div class="head">
+      <div class="ear" id="left"></div>
+      <div class="ear" id="right"></div>
+      <div class="hair-main">
+        <div class="sideburn" id="left"></div>
+        <div class="sideburn" id="right"></div>
+        <div class="hair-top"></div>
+      </div>
+      <div class="face">
+        <div class="hair-bottom"></div>
+        <div class="nose"></div>
+        <div class="eye-shadow" id="left">
+          <div class="eyebrow"></div>
+          <div class="eye"></div>
+        </div>
+        <div class="eye-shadow" id="right">
+          <div class="eyebrow"></div>
+          <div class="eye"></div>
+        </div>
+        <div class="mouth"></div>
+        <div class="shadow-wrapper">
+          <div class="shadow"></div>
+        </div>
+      </div>
+    </div>
+    <span class="music-note" id="one">&#9835;</span>
+    <span class="music-note" id="two">&#9834;</span>
+  </div>
+    
+    <div class="engagement">Would You Marry Me?</div>
+      
+     <button name="yes" data-modal="modal-13"  class="button lightpurple md-trigger"><div class="shine" style="top:-18px !important"></div>Yes, I do</button>
+     <button name="cntwait" data-modal="modal-4"  class="button lightorange md-trigger"><div class="shine" style="top:-18px !important"></div>Can't wait</button>
+
+  {#hidden content#}
+     {% for content in data %}
+         {{ content.content }}
+     {% endfor %}
+
+ 
+
+  <script type="text/javascript">
+      //隐藏下一步按钮
+      $("#p3").hide();
+      $("#p5").hide();
+      $("#p7").hide();
+      $("#p9").hide();
+      $("#p11").hide();
+
+      //正确密码
+      var correct1 = "HG32Q6KTM43SZAW";
+      var correct2 = "Storm Glass";
+      var correct3 = "天空之城";
+      var correct4_1 = "没用的盒子";   var correct4_2 = "无用的盒子";
+      var born_date = "2012-7-7";
+
+      //第一关密码
+      $(function () {
+          $("#p2").bind("click", function () {
+              $.ajax({
+                      type: "POST",
+                      url: "check_pwd.php",
+                      data: $("#pwd1").val(),
+                      async:false,
+                      success: function(data){
+                         if($("#pwd1").val()==correct1){
+                             alert("恭喜你，密码正确！");
+                             $("#p3").show();
+                             $("#p2").hide();
+                         }else{
+                             alert("艾玛，错了错了！挣大猪眼看清楚！");
+                         }
+
+              }
+          });
+
+      })
+      });
+
+      //第二关密码
+      $(function () {
+          $("#p4").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#pwd2").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#pwd2").val()==correct2){
+                          alert("恭喜屎猪，密码正确！");
+                          $("#p5").show();
+                          $("#p4").hide();
+                      }else{
+                          alert("NO NO NO！Try again!");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+      //第三关密码
+      $(function () {
+          $("#p6").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#pwd3").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#pwd3").val()==correct3){
+                          alert("Bingo，你真聪明！");
+                          $("#p7").show();
+                          $("#p6").hide();
+                      }else{
+                          alert("不对！快问男票！");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+      //第四关密码
+      $(function () {
+          $("#p8").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#pwd4").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#pwd4").val()==correct4_1||$("#pwd4").val()==correct4_2){
+                          alert("哇靠，你居然懂英文！");
+                          $("#p9").show();
+                          $("#p8").hide();
+                      }else{
+                          alert("唉，你的英文真菜！快去问男神！");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+      //第五关密码
+      $(function () {
+          $("#p10").bind("click", function () {
+              $.ajax({
+                  type: "POST",
+                  url: "check_pwd.php",
+                  data: $("#born_date").val(),
+                  async:false,
+                  success: function(data){
+                      if($("#born_date").val()==born_date){
+                          alert("正确！总算你没有忘记！");
+                          $("#p11").show();
+                          $("#p10").hide();
+                      }else{
+                          alert("岂有此理，居然连纪念日忘记！哼！╭∩╮(︶︿︶）╭∩╮");
+                      }
+
+                  }
+              });
+
+          })
+      });
+
+
+  </script>
+
+
+    <div class="md-overlay"></div><!-- the overlay element -->
+
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/classie.js')}}"></script>
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/modalEffects.js')}}"></script>
+
+		<!-- for the blur effect -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js2/';
+		</script>
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/cssParser.js')}}"></script>
+		<script src="{{asset('bundles/proposalweb/js/engagement/js2/css-filters-polyfill.js')}}"></script>
+
+
+
+
+
+  <script src="{{asset('bundles/proposalweb/js/engagement/js2/modernizr.custom.js')}}"></script>
+  <!--日历选择器-->
+  <script type="text/javascript" src="{{asset('bundles/proposalweb/js/engagement/js/jquery-1.7.2.min.js')}}"></script>
+  <script type="text/javascript" src="{{asset('bundles/proposalweb/js/engagement/js/manhuaDate.1.0.js')}}"></script>
+  <script type="text/javascript">
+      $(function (){
+          $("input.mh_date").manhuaDate({
+              Event : "click",//可选
+              Left : 0,//弹出时间停靠的左边位置
+              Top : -16,//弹出时间停靠的顶部边位置
+              fuhao : "-",//日期连接符默认为-
+              isTime : false,//是否开启时间值默认为false
+              beginY : 1949,//年份的开始默认为1949
+              endY :2100//年份的结束默认为2049
+          });
+
+      });
+  </script>
+
+
+{% endblock %}
+
+

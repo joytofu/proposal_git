@@ -25,29 +25,35 @@ class Proposal2 {
     protected $question;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $option1;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $option2;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $option3;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $option4;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     protected $option5;
+
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $fav_city;
 
 
     /**
@@ -196,5 +202,28 @@ class Proposal2 {
     public function getOption5()
     {
         return $this->option5;
+    }
+
+    /**
+     * Set fav_city
+     *
+     * @param string $favCity
+     * @return Proposal2
+     */
+    public function setFavCity($favCity)
+    {
+        $this->fav_city = $favCity;
+    
+        return $this;
+    }
+
+    /**
+     * Get fav_city
+     *
+     * @return string 
+     */
+    public function getFavCity()
+    {
+        return $this->fav_city;
     }
 }

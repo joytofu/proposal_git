@@ -30,15 +30,6 @@ class Engagement {
      */
     protected $content;
 
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $questions;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    protected $answers;
 
     /**
      * Get id
@@ -96,49 +87,5 @@ class Engagement {
         return $this->content;
     }
 
-    /**
-     * Set questions
-     *
-     * @param string $questions
-     * @return Engagement
-     */
-    public function setQuestions($questions)
-    {
-        $this->questions = $questions;
-    
-        return $this;
-    }
 
-    /**
-     * Get questions
-     *
-     * @return string 
-     */
-    public function getQuestions()
-    {
-        return $this->questions;
-    }
-
-    /**
-     * Set answers
-     *
-     * @param string $answers
-     * @return Engagement
-     */
-    public function setAnswers($answers)
-    {
-        $this->answers = $answers;
-    
-        return $this;
-    }
-
-    /**
-     * Get answers
-     *
-     * @return string 
-     */
-    public function getAnswers()
-    {
-        return $this->answers;
-    }
 }

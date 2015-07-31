@@ -12,9 +12,7 @@ class EngagementType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options){
         $builder
             ->add('title','text')
-            ->add('content','textarea',array('attr'=>array('rows'=>10)))
-            ->add('questions','textarea',array('attr'=>array('rows'=>10)))
-            ->add('answers','textarea',array('attr'=>array('rows'=>10)));
+            ->add('content','textarea',array('attr'=>array('rows'=>15)));
     }
 
     public function configureOptions(OptionsResolver $resolver)

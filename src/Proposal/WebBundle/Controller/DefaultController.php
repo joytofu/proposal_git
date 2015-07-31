@@ -58,7 +58,7 @@ class DefaultController extends Controller
         }
 
 
-        return $this->render('ProposalWebBundle:Default:proposal2_test.html.twig',array('data'=>$data,'order'=>$order,'form'=>$favCityForm->createView()));
+        return $this->render('ProposalWebBundle:Default:proposal2.html.twig',array('data'=>$data,'order'=>$order,'form'=>$favCityForm->createView()));
     }
 
 
@@ -67,9 +67,12 @@ class DefaultController extends Controller
      */
     public function storybook(Request $request)
     {
-        $form = $this->createFormBuilder() //参数填入对应数据库表对象
+
+
+
+        //答案表格
+        $form = $this->createFormBuilder() //表格只作检验答案对错，不对数据库作读写处理，因此参数为空，不绑定数据库
         ->add('answer','text',array('label'=>'','constraints'=>new EqualTo(array('value'=>'屎猪','message'=>'回答错误，请重新输入答案!'))))
-        ->add('submit','submit',array('label'=>'提交'))
         ->getForm();
 
         $form->handleRequest($request);
@@ -80,7 +83,7 @@ class DefaultController extends Controller
 
 
         $content = '1';
-        return $this->render('ProposalWebBundle:Default:story.html.twig',array('content'=>$content,'form'=>$form->createView()));
+        return $this->render('ProposalWebBundle:Default:storyboobook.htmlig',array('content'=>$content,'form'=>$form->createView()));
     }
 
 
@@ -119,10 +122,12 @@ class DefaultController extends Controller
     /**
      * @Route("/engagement", name="engagement")
      */
-    public function engagement()
+    public function engagement(Request $request)
     {
-        $content = 1;
-        return $this->render('ProposalWebBundle:Default:engagement.html.twig',array('content'=>$content));
+        $em = $this->getDoctrine()->getManager();
+        $data = $em->getRepository('ProposalWebBundle:Engagement')->findAll();
+
+        return $this->render('ProposalWebBundle:Default:engagement.html.twig',array('data'=>$data));
     }
 
 }
