@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class Proposal1Repository extends EntityRepository
 {
+    public function findLatest(){
+        $sql = 'SELECT * FROM `Proposal1` order by id DESC limit 1';
+        $res = mysql_query($sql);
+        $output = mysql_fetch_assoc($res);
+        return $output;
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace Proposal\WebBundle\Controller;
 
+use Proposal\WebBundle\Entity\Engagement;
 use Proposal\WebBundle\Entity\Proposal1;
 use Proposal\WebBundle\Entity\Proposal2;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -10,6 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Validator\Constraints\EqualTo;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 
 
@@ -24,7 +26,9 @@ class DefaultController extends Controller
      */
     public function proposal1()
     {
-       $data =  $this->getDoctrine()->getRepository('ProposalWebBundle:Proposal1')->findOneBy(array('id'=>2));
+       $data =  $this->getDoctrine()->getRepository('ProposalWebBundle:Proposal1')->findLatest();
+        print_r($data);
+        exit;
        $title = $data->getTitle();
        $content = $data->getContent();
        return $this->render('ProposalWebBundle:Default:proposal1.html.twig',array('title'=>$title,'content'=>$content));
@@ -126,19 +130,53 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $data = $em->getRepository('ProposalWebBundle:Engagement')->findAll();
-        $pwd_data = $em->getRepository('ProposalWebBundle:Engagement')->find('15');
-        $pwd= $pwd_data->getPwd();
-        print_r($pwd);
-        exit;
 
-        if($_POST){
-            $pwd[]=$_POST;
-            return $pwd;
+
+
+        return $this->render('ProposalWebBundle:Default:engagement.html.twig',array('data'=>$data));
+    }
+
+    /**
+     * @Route("/checkEngagementPWD", name="check_engagement")
+     * @Method("POST")
+     */
+    public function checkEngagement(Request $request)
+    {
+        $data_key = key($_POST);
+        switch($data_key){
+            case 'pwd1':
+                $id = 15;
+                break;
+            case 'pwd2':
+                $id = 16;
+                break;
+            case 'pwd3':
+                $id = 17;
+                break;
+            case 'pwd4':
+                $id = 18;
+                break;
+            case 'born_date':
+                $id = 19;
+                break;
         }
 
+        $em = $this->getDoctrine()->getRepository('ProposalWebBundle:Engagement')->find($id);
+        $correct_pwd = $em->getPwd();
 
+        if(($request->isXmlHttpRequest()))
+        {
+            $pwd = $request->request->get($data_key);
+            if($pwd==$correct_pwd){
+                $message = 'true';
+            }else{
+                $message = 'false';
+            }
 
-        return $this->render('ProposalWebBundle:Default:engagement_test.html.twig',array('data'=>$data));
+        }
+
+        return new Response($message);
+
     }
 
 }

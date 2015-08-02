@@ -4,7 +4,7 @@ body, html{
   margin:0;
   display: table;
   text-align: center;
-  background:url("../../../images/12.jpg");
+  background:url("/bundles/proposalweb/images/proposal_images/12.jpg");
 }
 
 .wrapper{
